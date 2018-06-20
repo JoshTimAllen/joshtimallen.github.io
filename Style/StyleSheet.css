@@ -1,0 +1,61 @@
+
+a,h1{
+  color: white;
+  text-decoration: none;
+  font-family:cursive;
+}
+img{
+  position: relative;
+  width: 100px;
+  top:-10px;
+  left:20px;
+}
+
+.head{
+  margin-top: 25px;
+  margin-bottom: -30px;
+  width: 40%;
+}
+.headtxt{
+  position: absolute;
+  margin: auto;
+  bottom: 810px;
+  left: 130px;
+}
+.Menu{
+background-color: 	#4C4C4C;
+border: 1px solid white;
+border-left: 0;
+border-right: 0;
+height: 25px;
+}
+.LinkInMenu{
+  position: relative;
+  margin: auto;
+  min-width: 200px;
+  padding-right: 5%;
+  padding-left: 5%;
+  bottom: 20px;
+  font-size: 15px;
+}
+.LinkInMenu:hover{
+}
+
+.D1{
+  margin: auto;
+  background-color: gray;
+  position: relative;
+  width: 90%;
+  min-width: 400px;
+  font-size: 20px;
+  height: 900px;
+  border: solid white;
+}
+
+#cpl{
+  color :blue;
+}
+
+body{
+  background-color: black;
+}
