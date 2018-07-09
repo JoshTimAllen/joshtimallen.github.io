@@ -65,8 +65,8 @@ margin-top: 10px;
 }
 .Container{
   margin: auto;
-  margin-top: 50px;
-  width: 90%;
+  margin-top: 5px;
+  width: 100%;
   background-color: #3E3E3E;
   height: auto;
   border: 1px solid white;
@@ -77,8 +77,8 @@ body{
 }
 
 @media(max-width: 900px){
-  .container{
-    width: 90%;
+  .Container{
+    width: 100%;
   }
   .Menu li {
     display:block;
