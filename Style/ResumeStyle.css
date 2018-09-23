@@ -1,0 +1,57 @@
+
+a,p,img,h1,h2,h3,li,ul,.Content{
+  color:  #FFFFCC;
+  text-decoration: none;
+  font-family: 'Russo One', sans-serif;
+}
+
+.Head{
+  float: left;
+  position: fixed;
+  background-color: rgba(251,255,181,0.3);
+  width: 1006px;margin: auto;
+  left: 50%;
+  right: 50%;
+  margin-left: -503px;
+}
+
+.Head a{
+  color: black;
+}
+
+ul{
+  text-align: center;
+}
+li{
+  padding-left: 30px;
+  padding-right: 30px;
+  color: black;
+  display: inline;
+}
+
+.Content{
+  height: auto;
+  width: 1006px;
+  background-image: url("../Resources/FirstBackground.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+  margin: auto;
+}
+.BODY{
+  margin: auto;
+  margin-top: -16px;
+}
+
+.Contacts{
+  background-color: black;
+  height: 50px;
+}
+.Contacts p{
+  padding-left: 20%;
+  color: white;
+}
+body{
+  margin: 0;
+  background-color: black;
+}
