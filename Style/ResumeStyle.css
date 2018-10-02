@@ -1,57 +1,276 @@
 
 a,p,img,h1,h2,h3,li,ul,.Content{
-  color:  #FFFFCC;
+  color: white;
   text-decoration: none;
   font-family: 'Russo One', sans-serif;
 }
 
+.MenuImageBackground{
+  width: 100%;
+position: fixed;
+  background-color: rgba(201,200,181);
+  border-bottom: 1px solid white
+  display:none;
+  height: 40px;
+    z-index: 999;
+    display: none;
+}
+
 .Head{
   float: left;
-  position: fixed;
   background-color: rgba(251,255,181,0.3);
   width: 1006px;margin: auto;
-  left: 50%;
-  right: 50%;
-  margin-left: -503px;
+
+  position: fixed;
+  z-index: 999;
 }
 
-.Head a{
+label{
+  position: fixed;
+  cursor: pointer;
+  font-size: 35px;
+  float: right;
+  z-index: 999;
+  margin-left: 90%;
+  margin-top: -5px;
+  color:#ff7f50;
+  display: none;
+}
+#toggle{
+  position: fixed;
+  display: none;
+  z-index: 999;
+}
+#Namess{
+  font-size: 30px;
+  padding-top: 10px;
+  height: 50px;
+  width: 50px;
+  padding-bottom: 10px;
   color: black;
 }
-
+#LOGO{
+  padding-left: 400px;
+  padding-top: 100px;
+}
+#J,#T,#Hyphen{
+  font-family: 'Monoton',  sans-serif;
+  font-size: 110px;
+  display: inline;
+  position: relative;
+  top: 100px;
+  left: 430px;
+  text-align: center;
+}
+#J{
+  color: #FFE540;
+}
+#Hyphen{
+    color: #FFA440;
+}
+#T{
+  color: #90FFC1;
+}
+#Name{
+  display: block;
+  position: relative;
+  font-size: 80px;
+  top: 0px;
+  left: 350px;
+  left: 0;
+  position: relative; left: 51%;
+transform: translateX(-50%);
+}
+#Titlee{
+  display: block;
+  position: relative;
+  font-size: 25px;
+  left: 280px;
+  margin-top: -80px;
+  width: 600px;
+}
+.Head a{
+  color: black;
+  height: 100%;
+}
 ul{
   text-align: center;
 }
 li{
-  padding-left: 30px;
-  padding-right: 30px;
-  color: black;
-  display: inline;
+}
+.Head li {
+
+    color: black;
+    display: inline;
+  padding-top: 20px;
+  padding-bottom: 15px;
+}
+.Head li a{
+  padding-top: 20px;
+  padding-bottom: 15px;
+  padding-right: 50px;
+  padding-left: 50px;
+}
+
+.Menu li:hover{
+  background-color: #65BEFF;
 }
 
 .Content{
   height: auto;
   width: 1006px;
+  margin: auto;
+}
+.intro{
   background-image: url("../Resources/FirstBackground.png");
   background-repeat: no-repeat;
+
   background-size: 100%;
-  background-attachment: fixed;
   margin: auto;
+  height: 660px;
+}
+.Resume{
+  background-color: grey;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin: auto;
+  padding-top: 30px;
+}
+.Resume p{
+  color: #ECECEC;
+  padding-left: 20px;
+  padding-bottom: 10px;
 }
 .BODY{
   margin: auto;
-  margin-top: -16px;
 }
-
-.Contacts{
-  background-color: black;
-  height: 50px;
+.Contacts p{
+  padding-top: 20px;
+  padding-bottom: 30px;
+  padding-left: 20%;
+  padding-right: 20%;
+  color: white;
+  text-align: center;
 }
 .Contacts p{
   padding-left: 20%;
-  color: white;
+}
+#FirstHR{
+  margin-top: -3px;
+  margin-bottom: 0px;
+}
+#SecondHR{
+  margin-top: 100px;
+}
+#ThirdHR{
+  width: 60%;
 }
 body{
   margin: 0;
   background-color: black;
+
+
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .BODY{
+        width: 100%;
+      }
+      .Content{
+        width: 100%;
+      }
+  .Head{
+    width: 100%;
+    margin-top: 40px;
+    display: none;
+
+  }
+  .Menu{
+    margin-top: -16px;
+    margin-bottom: -17px;
+  }
+      .Menu li {
+        display:block;
+        border: 1px solid white;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        margin-left: -40px;
+      }
+      #home{
+        ;
+        border: 1px solid white;
+        border-left: none;
+        border-right: none;
+      }
+      .MenuImageBackground{
+        display: block;
+      }
+  label{
+    display: block;
+  }
+      #toggle:checked ~ .Head{
+        display:block;
+    }
+
+      .intro{
+        background-image: url("../Resources/FirstBackground.png");
+
+        background-repeat: no-repeat;
+
+        background-size: auto;
+        margin: auto;
+        width: 100%;
+        height: 660px;
+        }
+        #J,#T,#Hyphen{
+          font-family: 'Monoton',  sans-serif;
+          display: inline;
+          position: relative;
+          top: 100px;
+          left: 0;
+          text-align: center;
+          text-align: center;
+          transform: translateX(-50%);
+        }
+        .JT{
+          margin-left: -70px;
+          width:200px;
+          position: relative; left: 50%;
+        }
+        #J{
+          color: #FFE540;
+        }
+        #Hyphen{
+            color: #FFA440;
+        }
+        #T{
+          color: #90FFC1;
+        }
+        #Name{
+          display: block;
+          position: relative;
+          font-size: 50px;
+          top: 50px;
+          width: 320px;
+          left: 0;
+          position: relative; left: 50%;
+  transform: translateX(-50%);
+  padding-left: 25px;
+        }
+        #Titlee{
+          display: block;
+          position: relative;
+          font-size: 18px;
+          top:100px;
+          width: 400px;
+          left: 0;
+          position: relative; left: 50%;
+  transform: translateX(-50%);
+  padding-left: 60px;
+        }
+        .Resume{
+          width: 100%;
+        }
 }
