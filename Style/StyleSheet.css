@@ -179,7 +179,7 @@ transform: translateX(-50%);
 body{
   margin: 0;
   background-color: black;
-
+width: 100%
 
 }
 
@@ -282,13 +282,16 @@ padding-left: 40px;
         position: relative;
         font-size: 18px;
         top:100px;
-        width: 400px;
+        width: 350px;
         left: 0;
         position: relative; left: 50%;
 transform: translateX(-50%);
-padding-left: 60px;
+padding-left: 0px;
       }
       .About{
         width: 100%;
+      }
+      body{
+        overflow-x: hidden;
       }
 }
