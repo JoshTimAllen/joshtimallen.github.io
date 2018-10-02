@@ -126,6 +126,7 @@ li{
   background-repeat: no-repeat;
 
   background-size: 100%;
+  background-position: 50%;
   margin: auto;
   height: 660px;
 }
