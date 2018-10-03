@@ -142,9 +142,9 @@ li{
 .AboutImages{
   width: 300px;
   height: 200px;
-  padding-left: 120px;
-  position: relative; left: 25%;
-transform: translateX(-50%);
+  position: relative; left: 50%;
+  margin-left: -325px;
+  margin-right: 375px;
 }
 .BODY{
   margin: auto;
@@ -183,7 +183,7 @@ width: 100%
 
 }
 
-@media only screen and (max-width: 768px ) {
+@media only screen and (max-width: 750px ) {
   .BODY{
       width: 100%;
     }
@@ -240,7 +240,8 @@ label{
         display: block;
         padding-top: 5px;
         position: relative; left: 50%;
-transform: translateX(-50%);padding-left: 5%;
+        margin-left: -125px;
+        margin-right: -125px;;
       }
       #J,#T,#Hyphen{
         font-family: 'Monoton',  sans-serif;
@@ -274,7 +275,7 @@ transform: translateX(-50%);padding-left: 5%;
         width: 320px;
         left: 0;
         position: relative; left: 50%;
-transform: translateX(-50%);
+        margin-left: -190px;
 padding-left: 40px;
       }
       #Titlee{
@@ -285,7 +286,7 @@ padding-left: 40px;
         width: 350px;
         left: 0;
         position: relative; left: 50%;
-transform: translateX(-50%);
+        margin-left: -170px;
 padding-left: 0px;
       }
       .About{

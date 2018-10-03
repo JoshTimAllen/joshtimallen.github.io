@@ -76,10 +76,8 @@ label{
   position: relative;
   font-size: 80px;
   top: 0px;
-  left: 350px;
+  margin-left: 25px;
   left: 0;
-  position: relative; left: 51%;
-transform: translateX(-50%);
 }
 #Titlee{
   display: block;
@@ -173,7 +171,7 @@ body{
 
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 750px) {
 
     .BODY{
         width: 100%;
@@ -236,7 +234,7 @@ body{
           transform: translateX(-50%);
         }
         .JT{
-          margin-left: -70px;
+          margin-left: -80px;
           width:200px;
           position: relative; left: 50%;
         }
@@ -257,8 +255,7 @@ body{
           width: 320px;
           left: 0;
           position: relative; left: 50%;
-  transform: translateX(-50%);
-  padding-left: 25px;
+          margin-left: -155px;
         }
         #Titlee{
           display: block;
