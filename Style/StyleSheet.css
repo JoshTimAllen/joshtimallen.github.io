@@ -83,11 +83,9 @@ h1{
   margin-top: 5px;
 }
 .Content{
-  position: absolute;
+  position: relative;
   text-align: center;
   top: 80px;
-  left: 50%;
-  margin-left: -203px;
 }
 .Name{
   font-size: 60px;
@@ -162,8 +160,6 @@ html{
 .BODY{
   position: relative;
   margin: 0;
-  margin-top: -16px;
-
 }
 
 
