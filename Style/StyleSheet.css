@@ -169,6 +169,8 @@ html{
   border-top: 1px solid white;
   margin-top: 15px;
 }
+.Heading{
+}
   .Heading li{
     float: right;
     display:block;
@@ -184,19 +186,22 @@ html{
     width: 100%;
     height: 100%;
     display: inline-block;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 40px;
+    padding-bottom: 40px;
     padding-left: 0;
     padding-right: 0;
   }
 
   .Heading ul{
+    overflow: auto;
     position: absolute;
     float: none;
     display: none;
     width: 100%;
     margin-top: 40px;
     margin-left: -110px;
+    height: 100%;
+    z-index: -1;
   }
   .MenuButton{
     display: inline;
