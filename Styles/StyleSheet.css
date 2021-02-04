@@ -28,17 +28,17 @@ header {
 }
 
 nav {
-    width: 70%;
+    width: 100%;
     flex: 0.7;
     margin: auto;
 }
 
 .links {
     display: flex;
-    justify-content: space-around;
     list-style: none;
     height: 100%;
     align-items: 100%;
+    justify-content: space-evenly;
 }
 
 .link {
@@ -222,11 +222,13 @@ section {
     width: 100%;
     align-items: center;
 }
-section h2{
+
+section h2 {
     padding: 20px;
     color: rgb(255, 201, 14) !important;
 }
-section h5 a{
+
+section h5 a {
     color: rgb(201, 201, 201) !important;
 }
 
@@ -234,17 +236,20 @@ section h5 a{
     width: 100%;
     align-items: center;
 }
-.line-container{
-    display: flex !important; 
-    justify-content: center !important; 
-    align-items: center !important; 
-    flex-direction: column !important; 
+
+.line-container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-direction: column !important;
 }
+
 .line {
     height: 2px;
     background: black;
     width: 100%;
 }
+
 .line-80 {
     height: 0.5px;
     background: rgb(107, 107, 107);
@@ -256,15 +261,17 @@ h2 {
     font-size: 32px;
 }
 
-#Skills img{
+#Skills img {
     height: 150px;
     padding: 20px;
 }
-#Projects img{
+
+#Projects img {
     height: 200px;
     padding: 20px;
 }
-footer{
+
+footer {
     position: relative;
     top: 49px;
     margin: auto;
@@ -272,6 +279,7 @@ footer{
     align-items: center;
     border-top: 1px solid #9e9e9e;
 }
+
 /* background-color: rgb(180, 180, 180);
   background: rgb(109, 109, 109);
 background: rgb(255, 255, 255); 
