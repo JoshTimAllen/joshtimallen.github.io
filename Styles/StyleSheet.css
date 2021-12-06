@@ -279,6 +279,46 @@ footer {
   align-items: center;
   border-top: 1px solid #9e9e9e;
 }
+.project-heading {
+  text-decoration: underline;
+  color: #165aa6 !important;
+}
+.project-divide-line {
+  border-bottom: 1px solid #9e9e9e;
+  width: 85%;
+  margin: auto;
+}
+.project-cotainer {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.project-intro {
+}
+.project-details {
+  flex: 2;
+  /* border: 1px solid red; */
+  text-align: left;
+  padding: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+  .project-cotainer {
+    display: grid;
+    grid-template:
+      "i"
+      "d";
+  }
+  .project-intro {
+    grid-area: i;
+  }
+  .project-details {
+    grid-area: d;
+    margin: auto;
+  }
+}
 
 /* background-color: rgb(180, 180, 180);
   background: rgb(109, 109, 109);
