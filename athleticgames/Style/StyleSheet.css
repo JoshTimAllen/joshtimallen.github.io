@@ -1,42 +1,49 @@
-
-a,p,img,h1,h2,h3,li,ul,.Content{
+a,
+p,
+img,
+h1,
+h2,
+h3,
+li,
+ul,
+.Content {
   color: white;
   text-decoration: none;
-  font-family: 'Russo One', sans-serif;
+  font-family: "Russo One", sans-serif;
 }
 img {
-    max-width: 100%;
-    height: auto;
-    width: auto\9; /* ie8 */
+  max-width: 100%;
+  height: auto;
+  width: auto\9; /* ie8 */
 }
-.logo{
+.logo {
   width: 50px;
   position: absolute;
   margin-left: 20px;
   margin-top: 2.5px;
 }
-h1{
-  color:rgba(244, 215, 66);
+h1 {
+  color: rgba(244, 215, 66);
   color: white;
   display: inline;
   position: relative;
   top: 10px;
   left: 80px;
 }
-.Heading{
+.Heading {
   width: 100%;
   position: fixed;
   padding-bottom: 10px;
-  background-color: rgba(0, 0, 0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   height: 45px;
   z-index: 1;
 }
-.Heading ul{
+.Heading ul {
   float: right;
   position: relative;
   display: inline;
 }
-.Heading li{
+.Heading li {
   text-decoration: none;
   display: inline;
   padding-left: 5px;
@@ -48,7 +55,7 @@ h1{
   text-align: center;
   border: 0;
 }
-.Heading li a{
+.Heading li a {
   width: 100%;
   height: 100%;
   font-size: 15px;
@@ -57,11 +64,11 @@ h1{
   padding-left: 30px;
   padding-right: 30px;
 }
-.Heading li a:hover{
+.Heading li a:hover {
   font-size: 15px;
-    background-color: rgba(226, 226, 226,0.5);
+  background-color: rgba(226, 226, 226, 0.5);
 }
-.MenuButton{
+.MenuButton {
   position: relative;
   float: right;
   top: 10px;
@@ -72,9 +79,9 @@ h1{
   padding-left: 5px;
   padding-right: 5px;
   padding-bottom: 5px;
-  background-color: rgba(226, 226, 226,0.5);
+  background-color: rgba(226, 226, 226, 0.5);
 }
-.mbi{
+.mbi {
   display: block;
   width: 30px;
   height: 5px;
@@ -82,28 +89,27 @@ h1{
   position: relative;
   margin-top: 5px;
 }
-.Content{
+.Content {
   position: relative;
   text-align: center;
   top: 80px;
 }
-.Name{
+.Name {
   font-size: 60px;
-  color: rgba(226, 226, 226,1);
+  color: rgba(226, 226, 226, 1);
   margin-top: 20px;
 }
-.Title{
+.Title {
   margin-top: -40px;
   font-size: 20px;
-  color:rgba(21, 91, 153);
+  color: rgba(21, 91, 153);
 }
 
-.DWM{
+.DWM {
+  background-color: blue;
+  background-color: rgba(0, 0, 0, 0.5);
 
-    background-color: blue;
-    background-color: rgba(0, 0, 0,0.5);
-
-    border-radius: 50px;
+  border-radius: 50px;
 
   padding-top: 30px;
   padding-bottom: 40px;
@@ -114,37 +120,37 @@ h1{
   margin-top: 60px;
   font-size: 20px;
 }
-.DWM a{
-    padding: 10px;
-    padding-left: 15px;
-    padding-right: 15px;
-    background-color: rgb(0, 91, 16);
-    border-radius: 100px;
+.DWM a {
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: rgb(0, 91, 16);
+  border-radius: 100px;
 }
 
-.Largelogo{
+.Largelogo {
   position: relative;
   width: 150px;
 }
 
-.BODY{
-margin: auto;
+.BODY {
+  margin: auto;
 }
-.frontButton{
+.frontButton {
   margin: auto;
   background-color: rgb(66, 134, 244);
   width: 170px;
   padding: 5px;
 }
-.frontButton p{
+.frontButton p {
   margin: auto;
 }
-body{
+body {
   margin: 0;
-height: 100%;
-overflow: auto;
+  height: 100%;
+  overflow: auto;
 }
-html{
+html {
   height: auto;
   background-color: rgb(58, 107, 81);
   background-color: rgb(66, 134, 244);
@@ -155,32 +161,29 @@ html{
 
   background-position: 50% 50%;
 
-  height:656px;
+  height: 656px;
 }
-.BODY{
+.BODY {
   position: relative;
   margin: 0;
 }
 
-
-@media only screen and (max-width: 900px ) {
-
-#firstLink{
-  border-top: 1px solid white;
-  margin-top: 15px;
-}
-.Heading{
-}
-  .Heading li{
+@media only screen and (max-width: 900px) {
+  #firstLink {
+    border-top: 1px solid white;
+    margin-top: 15px;
+  }
+  .Heading {
+  }
+  .Heading li {
     float: right;
-    display:block;
+    display: block;
     padding: 0;
     float: none;
     border: none;
     border-bottom: 1px solid white;
-
   }
-  .Heading li a{
+  .Heading li a {
     font-size: 15px;
     position: relative;
     width: 100%;
@@ -192,7 +195,7 @@ html{
     padding-right: 0;
   }
 
-  .Heading ul{
+  .Heading ul {
     overflow: auto;
     position: absolute;
     float: none;
@@ -203,20 +206,19 @@ html{
     height: 100%;
     z-index: -1;
   }
-  .MenuButton{
+  .MenuButton {
     display: inline;
   }
 }
 
-@media only screen and (max-width: 500px ) {
-
-  .Name{
+@media only screen and (max-width: 500px) {
+  .Name {
     font-size: 40px;
   }
-  .Title{
+  .Title {
     margin-top: -10px;
   }
-  .DWM{
+  .DWM {
     bottom: 40px;
   }
 }

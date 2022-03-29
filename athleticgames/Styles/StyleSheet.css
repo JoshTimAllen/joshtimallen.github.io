@@ -32,6 +32,9 @@ header {
 .badge img {
   height: 100px !important;
 }
+.app-store-badge img {
+  width: 220px !important;
+}
 nav {
   width: 100%;
   flex: 0.7;
