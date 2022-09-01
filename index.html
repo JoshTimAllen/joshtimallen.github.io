@@ -1,295 +1,851 @@
-<!DOCTYPE html> 
-<html lang="en"> 
-    <head> 
-        <meta charset="UTF-8"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
-        <meta name="facebook-domain-verification" content="xh7amljhuzsg9ioybg3uqizszsw5z1" />
-        <link rel="preconnect" href="https://fonts.gstatic.com">
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Josh-Tim Allen</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta content="" name="description">
+        <meta content="" name="author">
+        <link rel="shortcut icon" href="Resources/logo.png">
+        <!-- START CSS STYLE  -->
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Quattrocento" />
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/animate.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/popup.css" media="screen">
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/color/default.css" id="theme" rel="stylesheet">
+        <link href="css/style-responsive.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Faster+One&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Monofett&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="Styles/StyleSheet.css">
-        <link rel="icon" href="Resources/logo.png">
-        <title>Josh-Tim Allen</title>         
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    </head>     
-    <body> 
-        <header> 
-            <nav class="h-100"> 
-                <ul class="align-items-center d-flex h-100 links"> 
-                    <li>
-                        <a href="#About" class="link">About</a>
-                    </li>                     
-                    <li>
-                        <a href="#Skills" class="link">Skills</a>
-                    </li>                     
-                    <li>
-                        <a href="#Projects" class="link">Projects</a>
-                    </li>
-                    <li>
-                        <a href="#Contacts" class="link">Contacts</a>
-                    </li>
-                </ul>                 
-            </nav>             
-        </header>
-        <main class="top" id="top"> 
-            <div class="TopBackgroundImages"> 
-                <div class="bk1"></div>                 
-                <div class="top-border"></div>                 
-                <div class="bk2"></div>                 
-            </div>             
-            <div class="intro"> 
-                <h1>Josh-Tim Allen</h1>
-                <!--img src="Resources/me.png"/-->
-                <p class="my-title">GAME DEVELOPER &nbsp; | &nbsp; WEB DEVELOPER</p> 
-            </div>             
-        </main>
-        <section id="#About" >
-            <h2 class="text-center">About</h2>
-            
-            <div class="line-container">
-                <div class="line-80"></div>
-            </div>  
-            <div>
-            <p style="padding: 50px; padding-left: 60px; padding-right: 60px; text-align: center;">
-                Hello, my name is Josh-Tim Allen, I am currently 22 years old. I have a passion for software development and game development is my primary focus. I can build any type of game but multiplayer games are what I love the most. There is just something about playing against or with other individuals in a video game. The game engine I use is Unity, thus I am proficient in using the C# language. I currently have one commercial game, named Athletic Games, which can be found on the Google Play Store. Athletic Games currently has 50,000+ total installs.
+        <link href="css/site.css" rel="stylesheet">
+        <!--  END CSS STYLE  -->
+    </head>
+    <body data-spy="scroll" data-target="#header-navbar" data-offset="51">
+        <!-- start main-container -->
+        <div id="main-container" class="fade">
+            <!-- start header -->
+            <div id="header" class="header navbar navbar-fixed-top">
+                <!-- start container -->
+                <div class="container">
+                    <!-- start navbar-header -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-navbar">
+                            <i class="fa fa-bars"></i>
+                            <i class="fa fa-close"></i>
+                        </button>
+                        <a href="index.html" class="navbar-brand" style="margin-top:-15px;"><h1 class="title-color">Josh-Tim Allen</h1></a>
+                    </div>
+                    <!-- end navbar-header -->
+                    <!-- start navbar-collapse -->
+                    <div class="collapse navbar-collapse" id="header-navbar">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="#home" data-click="scroll-to-target">HOME</a></li>
+                            <li><a data-toggle="collapse" href="#aboutus" data-click="scroll-to-target">ABOUT</a></li>
+                            <li><a href="#projects" data-click="scroll-to-target">PROJECTS</a></li>
+                            <li><a href="#services" data-click="scroll-to-target">SERVICES</a></li>
+                            <li><a href="#contact" data-click="scroll-to-target">CONTACT</a></li>
+                        </ul>
+                    </div>
+                    <!-- end navbar-collapse -->
+                </div>
+                <!-- end container -->
+            </div>
+            <!-- end header -->
+            <!-- start home -->
+            <section id="home" class="content bg home parallax1">
+                <!-- start container -->
+                <div class="container banner-content">
+                    <h1><span class="text-color">Josh-Tim</span> Allen</h1>
+                    <div style="display: flex; justify-content: center; align-items: center;">
+                        <h3><span class="text-color">Game</span> Developer</h3>
+                        <h3>&nbsp; | &nbsp;</h3>
+                        <h3><span class="text-color">Web</span> Developer</h3>
+                    </div>
+                    <a href="#projects" data-click="scroll-to-target" class="btn btn-theme">Projects</a>
+                    <a href="#contactus" data-click="scroll-to-target" class="btn btn-outline">Contact</a><br>
+                </div>
+                <!-- end container -->
+                <a href="#aboutus" data-click="scroll-to-target">
+                    <div class="button-scroll" data-scroll-nav="1"><span><i class="fa fa-angle-down"></i></span></div>
+                </a>
+            </section>
+            <!-- end home -->
+            <!-- start aboutus -->
+            <div id="aboutus" class="about" data-scrollview="true">
+                <!-- start container -->
+                <div class="container content" data-animation="true" data-animation-type="fadeInDown">
+                    <h2 class="content-heading" data-animation="true" data-animation-type="fadeInDown"><span class="title-color">ABOUT</span></h2>
+                    <div class="divider text-center">
+                        <span class="outer-line"></span>
+                        <span class="fa fa-user" aria-hidden="true"></span>
+                        <span class="outer-line"></span>
+                    </div>
+                    <p class="content-desc" data-animation="true" data-animation-type="fadeInDown">
+                        <!-- Hello, my name is Josh-Tim Allen, I am currently 23 years old. I have a passion for software development and game development is my primary focus. I can build any type of game but multiplayer games are what I love the most. There is just something about playing against or with other individuals in a video game. The game engine I use is Unity, thus I am proficient in using the C# language. I currently have one commercial game, named Athletic Games, which can be found on the Google Play Store. Athletic Games currently has 100,000+ total installs. . -->
+                    </p>
+                </div>
+                <div class="about-bg content bg parallax2">
+                    <div class="white_overlay_right"></div>
+                    <div class="container">
+                        <!-- start row -->
+                        <div class="row no-padding">
+                            <!-- strart col-6 -->
+                            <div class="col-md-6 col-sm-6 col-md-offset-6 col-sm-offset-6 no-padding" data-animation="true" data-animation-type="fadeInLeft">
+                                <!-- start about -->
+                                <div class="aboutus">
+                                    <h3>Who am I?</h3>
+                                    <p>
+                                        Hello, my name is Josh-Tim Allen, I am currently 23 years old. I have a passion for software development and game development is my primary focus. I can build any type of game but multiplayer games are what I love the most. There is just something about playing against or with other individuals in a video game. The game engine I use is Unity, thus I am proficient in using the C# language. I currently have one commercial game, named Athletic Games, which can be found on the Google Play Store. Athletic Games currently has 100,000+ total installs. .
+                                    </p>
+                                    <!-- <div class="item-box">
+                                        <i class="fa fa-anchor"></i>
+                                        <div class="item-right">
+                                            <h4>Our Mission</h4>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                Vestibulum posuere augue eget ante porttitor fringilla.
+                                            </p>
+                                        </div>
+                                    </div>	
+                                    <div class="item-box">
+                                        <i class="fa fa-support"></i>
+                                        <div class="item-right">
+                                            <h4>Custom Support</h4>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                Vestibulum posuere augue eget ante porttitor fringilla.
+                                            </p>
+                                        </div>
+                                    </div> -->
+                                </div>
+                                <!-- end about -->
+                            </div>
+                            <!-- end col-6 -->
+                        </div>
+                        <!-- end row -->
+                    </div>
+                </div>
+                <div class="about-bg content bg parallax3">
+                    <div class="white_overlay_left"></div>
+                    <div class="container">
+                        <!-- start row -->
+                        <div class="row no-padding">
+                            <!-- strart col-6 -->
+                            <div class="col-md-6 col-sm-6 no-padding" data-animation="true" data-animation-type="fadeInLeft">
+                                <!-- start about -->
+                                <div class="aboutus">
+                                    <h3>Skills</h3>
+                                    <p>
+                                        <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Vestibulum posuere augue eget ante porttitor fringilla.
+                                        Aliquam laoreet, sem eu dapibus congue, velit justo ullamcorper urna,
+                                        non rutrum dolor risus non sapien. Vivamus vel tincidunt quam.
+                                        Donec ultrices nisl ipsum, sed elementum ex dictum nec. -->
+                                    </p>
+                                    <!-- start skills -->
+                                    <div class="skills">
+                                        
 
-                .</p>  </div>            
-            <div class="line"></div>
-        </section>
-        <section id="Skills">
-            <h2 class="text-center">Skills</h2> 
-            <div class="line-container">
-                <div class="line-80"></div>
-            </div>             
-            <div style="padding: 50px; display: flex; width: 100vw; justify-content: center; align-items: center; text-align: center;">
+                                        <div class="skills-name">Game Development</div>
+                                        <div class="progress progress-striped active">
+                                            <div class="progress-bar" style="width: 100%">
+                                                <span class="progress-number">100%</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="skills-name">Web Development</div>
+                                        <div class="progress progress-striped active">
+                                            <div class="progress-bar" style="width: 80%">
+                                                <span class="progress-number">80%</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="skills-name">App Development</div>
+                                        <div class="progress progress-striped active">
+                                            <div class="progress-bar" style="width: 70%">
+                                                <span class="progress-number">70%</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="skills-name">Unity Game Engine</div>
+                                        <div class="progress progress-striped active">
+                                            <div class="progress-bar" style="width: 95%">
+                                                <span class="progress-number">95%</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="skills-name">Godot Game Engine</div>
+                                        <div class="progress progress-striped active">
+                                            <div class="progress-bar" style="width: 55%">
+                                                <span class="progress-number">55%</span>
+                                            </div>
+                                        </div>
+                                        <div class="skills-name">C#</div>
+                                        <div class="progress progress-striped active">
+                                            <div class="progress-bar" style="width: 95%">
+                                                <span class="progress-number">95%</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- <div class="skills-name">Programming</div>
+                                        <div class="progress progress-striped active">
+                                            <div class="progress-bar" style="width: 100%">
+                                                <span class="progress-number">100%</span>
+                                            </div>
+                                        </div> -->
+
+                                        <div class="skills-name">ASP.NET Core</div>
+                                        <div class="progress progress-striped active">
+                                            <div class="progress-bar" style="width: 75%">
+                                                <span class="progress-number">75%</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="skills-name">Database Integration</div>
+                                        <div class="progress progress-striped active">
+                                            <div class="progress-bar" style="width: 75%">
+                                                <span class="progress-number">75%</span>
+                                            </div>
+                                        </div>     
+                                        
+                                        <div class="skills-name">Front End</div>
+                                        <div class="progress progress-striped active">
+                                            <div class="progress-bar" style="width: 45%">
+                                                <span class="progress-number">45%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end skills -->
+                                </div>
+                                <!-- end about -->
+                            </div>
+                            <!-- end col-6 -->
+                        </div>
+                        <!-- end row -->
+                    </div>
+                </div>
+            </div>
+            <!-- end about -->
+        
+            <!-- start portfolio -->
+            <!-- <div id="portfolio" class="portfolio content" data-scrollview="true">
+                <div class="container">
+                    <h2 class="content-heading" data-animation="true" data-animation-type="fadeInDown"><span class="title-color">OUR</span> PORTFOLIO</h2>
+                    <div class="divider text-center">
+                        <span class="outer-line"></span>
+                        <span class="fa fa-image" aria-hidden="true"></span>
+                        <span class="outer-line"></span>
+                    </div>
+                    <p class="content-desc" data-animation="true" data-animation-type="fadeInDown">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur eros dolor,<br>
+                        sed bibendum turpis luctus eget
+                    </p>
+                    <div class="row">
+                        <div class="portfolio-filter">
+                            <button class="filter-button" data-filter="all">All</button>
+                            <button class="filter-button" data-filter="frontend">Front End</button>
+                            <button class="filter-button" data-filter="programming">Programming</button>
+                            <button class="filter-button" data-filter="webdesign">Web Design</button>
+                            <button class="filter-button" data-filter="databaseintegration">Database Integration</button>
+                        </div>
+                        <div class="portfolio_item col-lg-4 col-md-4 col-sm-6 col-xs-12 filter frontend">
+                            <img class="img-responsive" alt="portfolio" src="images/portfolio/portfolio1.jpg" />
+                            <div class="overlay-background">
+                                <div class="inner"></div>
+                            </div>
+                            <div class="overlay">
+                                <div class="inner-overlay">
+                                    <div class="inner-overlay-content with-icons">
+                                        <a class="popup-img" href="images/portfolio/portfolio1.jpg"><i class="fa fa-search"></i></a>
+                                        <h3>Lorem ipsum</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio_item col-lg-4 col-md-4 col-sm-6 col-xs-12 filter programming">
+                            <img class="img-responsive" alt="portfolio" src="images/portfolio/portfolio2.jpg" />
+                            <div class="overlay-background">
+                                <div class="inner"></div>
+                            </div>
+                            <div class="overlay">
+                                <div class="inner-overlay">
+                                    <div class="inner-overlay-content with-icons">
+                                        <a class="popup-img" href="images/portfolio/portfolio2.jpg"><i class="fa fa-search"></i></a>
+                                        <h3>Lorem ipsum</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio_item col-lg-4 col-md-4 col-sm-6 col-xs-12 filter webdesign">
+                            <img class="img-responsive" alt="portfolio" src="images/portfolio/portfolio3.jpg" />
+                            <div class="overlay-background">
+                                <div class="inner"></div>
+                            </div>
+                            <div class="overlay">
+                                <div class="inner-overlay">
+                                    <div class="inner-overlay-content with-icons">
+                                        <a class="popup-img" href="images/portfolio/portfolio3.jpg"><i class="fa fa-search"></i></a>
+                                        <h3>Lorem ipsum</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio_item col-lg-4 col-md-4 col-sm-6 col-xs-12 filter databaseintegration">
+                            <img class="img-responsive" alt="portfolio" src="images/portfolio/portfolio4.jpg" />
+                            <div class="overlay-background">
+                                <div class="inner"></div>
+                            </div>
+                            <div class="overlay">
+                                <div class="inner-overlay">
+                                    <div class="inner-overlay-content with-icons">
+                                        <a class="popup-img" href="images/portfolio/portfolio4.jpg"><i class="fa fa-search"></i></a>
+                                        <h3>Lorem ipsum</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio_item col-lg-4 col-md-4 col-sm-6 col-xs-12 filter frontend databaseintegration">
+                            <img class="img-responsive" alt="portfolio" src="images/portfolio/portfolio5.jpg" />
+                            <div class="overlay-background">
+                                <div class="inner"></div>
+                            </div>
+                            <div class="overlay">
+                                <div class="inner-overlay">
+                                    <div class="inner-overlay-content with-icons">
+                                        <a class="popup-img" href="images/portfolio/portfolio5.jpg"><i class="fa fa-search"></i></a>
+                                        <h3>Lorem ipsum</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio_item col-lg-4 col-md-4 col-sm-6 col-xs-12 filter webdesign frontend">
+                            <img class="img-responsive" alt="portfolio" src="images/portfolio/portfolio6.jpg" />
+                            <div class="overlay-background">
+                                <div class="inner"></div>
+                            </div>
+                            <div class="overlay">
+                                <div class="inner-overlay">
+                                    <div class="inner-overlay-content with-icons">
+                                        <a class="popup-img" href="images/portfolio/portfolio6.jpg"><i class="fa fa-search"></i></a>
+                                        <h3>Lorem ipsum</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio_item col-lg-4 col-md-4 col-sm-6 col-xs-12 filter frontend databaseintegration">
+                            <img class="img-responsive" alt="portfolio" src="images/portfolio/portfolio7.jpg" />
+                            <div class="overlay-background">
+                                <div class="inner"></div>
+                            </div>
+                            <div class="overlay">
+                                <div class="inner-overlay">
+                                    <div class="inner-overlay-content with-icons">
+                                        <a class="popup-img" href="images/portfolio/portfolio7.jpg"><i class="fa fa-search"></i></a>
+                                        <h3>Lorem ipsum</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio_item col-lg-4 col-md-4 col-sm-6 col-xs-12 filter databaseintegration">
+                            <img class="img-responsive" alt="portfolio" src="images/portfolio/portfolio8.jpg" />
+                            <div class="overlay-background">
+                                <div class="inner"></div>
+                            </div>
+                            <div class="overlay">
+                                <div class="inner-overlay">
+                                    <div class="inner-overlay-content with-icons">
+                                        <a class="popup-img" href="images/portfolio/portfolio8.jpg"><i class="fa fa-search"></i></a>
+                                        <h3>Lorem ipsum</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio_item col-lg-4 col-md-4 col-sm-6 col-xs-12 filter webdesign">
+                            <img class="img-responsive" alt="portfolio" src="images/portfolio/portfolio9.jpg" />
+                            <div class="overlay-background">
+                                <div class="inner"></div>
+                            </div>
+                            <div class="overlay">
+                                <div class="inner-overlay">
+                                    <div class="inner-overlay-content with-icons">
+                                        <a class="popup-img" href="images/portfolio/portfolio9.jpg"><i class="fa fa-search"></i></a>
+                                        <h3>Lorem ipsum</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- end portfolio -->
+            <!-- </div> -->
+            <!-- end portfolio -->
+            
+            <!-- start pricing -->
+            <!-- <div id="pricing" class="content pricing-tables" data-scrollview="true">
+                <div class="container" data-animation="true" data-animation-type="fadeInUp">
+                    <h2 class="content-heading" data-animation="true" data-animation-type="fadeInDown"><span class="title-color">OUR</span> PRICING</h2>
+                    <div class="divider text-center">
+                        <span class="outer-line"></span>
+                        <span class="fa fa-dollar" aria-hidden="true"></span>
+                        <span class="outer-line"></span>
+                    </div>
+                    <p class="content-desc" data-animation="true" data-animation-type="fadeInDown">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur eros dolor,<br>
+                        sed bibendum turpis luctus eget
+                    </p>
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4">
+                            <div class="bs bs-pricing" data-animation="true" data-animation-type="fadeInDown">
+                                <div class="cotent">
+                                    <h3 class="category">Personal</h3>
+                                    <div class="bs-caption"><small>$</small>11</div>
+                                    <ul>
+                                        <li><b>5 GB</b> Space</li>
+                                        <li><b>2 GB</b> RAM</li>
+                                        <li><b>24/7</b> Tech Support</li>
+                                        <li><b>Auto</b> Backup</li>
+                                        <li>Monthly Backups</li>
+                                        <li>8 CPU Core</li>
+                                    </ul>
+                                    <a href="#" class="btn btn-action">Buy Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <div class="bs bs-pricing highlight" data-animation="true" data-animation-type="fadeInUp">
+                                <div class="cotent">
+                                    <h3 class="category">Business</h3>
+                                    <div class="bs-caption"><small>$</small>15</div>
+                                    <ul>
+                                        <li><b>5 GB</b> Space</li>
+                                        <li><b>2 GB</b> RAM</li>
+                                        <li><b>24/7</b> Tech Support</li>
+                                        <li><b>Auto</b> Backup</li>
+                                        <li>Monthly Backups</li>
+                                        <li>8 CPU Core</li>
+                                    </ul>
+                                    <a href="#0" class="btn btn-white">Buy Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <div class="bs bs-pricing" data-animation="true" data-animation-type="fadeInDown">
+                                <div class="cotent">
+                                    <h3 class="category">Corporate</h3>
+                                    <div class="bs-caption"><small>$</small>20</div>
+                                    <ul>
+                                        <li><b>5 GB</b> Space</li>
+                                        <li><b>2 GB</b> RAM</li>
+                                        <li><b>24/7</b> Tech Support</li>
+                                        <li><b>Auto</b> Backup</li>
+                                        <li>Monthly Backups</li>
+                                        <li>8 CPU Core</li>
+                                    </ul>
+                                    <a href="#0" class="btn btn-action">Buy Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- end pricing -->
+            <section id="projects" class="content" data-scrollview="true">
+                <div class="container" data-animation="true" data-animation-type="fadeInUp">
+                    <h2 class="content-heading" data-animation="true" data-animation-type="fadeInDown"><span class="title-color">Projects</span></h2>
+                    <div class="divider text-center">
+                        <span class="outer-line"></span>
+                        <span class="fa fa-comment" aria-hidden="true"></span>
+                        <span class="outer-line"></span>
+                    </div>
+                    <p class="content-desc" data-animation="true" data-animation-type="fadeInDown">
+                        These are projects I have either published, completed or under development.
+                    </p>
+                    <div class="row">
+                        <div id="blog_posts" class="blog_posts carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <div class="col-md-4 col-sm-4">
+                                        <a href="./athleticgames/index.html" class="thumbnail project-thumbnail">
+                                            <img src="Resources/athleticgamesfeature.png" alt="">
+                                            <div class="caption">
+                                                <h3>Athletic Games</h3>
+                                                <div class="project-status1">
+                                                    <h5>Status: </h5> <p style="color: green;">Active</p> 
+                                                    <!-- <i class="fa fa-calendar"></i> &nbsp; 18/01/2017 -->
+                                                    <!-- <span><i class="fa fa-heart"></i> &nbsp; 53</span> -->
+                                                </div>
+                                                <p>
+                                                    Athletic Games is a Track and Field themed mobile game that brings a similar but unique approach to gameplay compared to others of its type. It consists of events such as 100m, 200, 400m, 400m Hurdles, 4x400m Relays, Mixed Relays, etc.
+
+                                The inspiration to make the game came from the fact that I did track and field in high school and fell in love with the sport. I was not the best at the sport and did not achieve the best results, however, my experience lead me to create my best and prized possession
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>            
+                                    <div class="col-md-4 col-sm-4">
+                                        <a href="" class="thumbnail project-thumbnail">
+                                            <img src="Resources/projectbfeature.png" alt="">
+                                            <div class="caption">
+                                                <h3>Project B</h3>
+                                                <div class="project-status1">
+                                                    <h5>Status: </h5> <p style="color: orange;">Under Development</p> 
+                                                    <!-- <i class="fa fa-calendar"></i> &nbsp; 18/01/2017 -->
+                                                    <!-- <span><i class="fa fa-heart"></i> &nbsp; 53</span> -->
+                                                </div>
+                                                <p>
+                                                    Project B (a stand in name until I decide on a name), the concept of this game is a multiplayer game where your goal is team work, whether to eliminate opposing teams or protect the city against enemy mobs.
+                                                    This game is heavily inspired by anime, one I will not disclose until the game is in a playable state.
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>            
+                                    <div class="col-md-4 col-sm-4">
+                                        <a target="_blank" href="https://jgds.org/" class="thumbnail project-thumbnail">
+                                            <img src="Resources/jgds-image.png" alt="">
+                                            <div class="caption">
+                                                <h3>jgds.org</h3>
+                                                <div class="project-status1">
+                                                    <h5>Status: </h5> <p style="color: green;">Active</p> 
+                                                    <!-- <i class="fa fa-calendar"></i> &nbsp; 18/01/2017 -->
+                                                    <!-- <span><i class="fa fa-heart"></i> &nbsp; 53</span> -->
+                                                </div>
+                                                <p>
+                                                    Website built for Jamaica Game Developer Society
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>                                    
+                                </div>    
+                                
+                                
+                                
+                                <div class="item">
+                                    <div class="col-md-4 col-sm-4">
+                                        <a href="https://piktok.herokuapp.com" class="thumbnail project-thumbnail">
+                                            <img src="Resources/piktok-image.png" alt="">
+                                            <div class="caption">
+                                                <h3>PikTok</h3>
+                                                <div class="project-status1">
+                                                    <h5>Status: </h5> <p style="color: green;">Active</p> 
+                                                    <!-- <i class="fa fa-calendar"></i> &nbsp; 18/01/2017 -->
+                                                    <!-- <span><i class="fa fa-heart"></i> &nbsp; 53</span> -->
+                                                </div>
+                                                <p>
+                                                    PikTok is a social media website with the ability to make media posts, follow users and like posts. (Currently working on fixing chat messages)
+
+                                                    Built with ASP.Net Core MVC and connects to MongoDB.                                                    
+                                                    
+                                                    Test login :    
+                                                    Email - email@email.com
+                                                    Password - password
+
+                                                    <!-- If you visit, you may use a fake email or make up one on spot, login and search for 'Josh' or 'Tim' and follow to see posts on the home page. -->
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>            
+                                    <div class="col-md-4 col-sm-4">
+                                        <a href="https://swapi-test-project.herokuapp.com" class="thumbnail project-thumbnail">
+                                            <img src="Resources/Swapi-Image.png" alt="">
+                                            <div class="caption">
+                                                <h3>SWAPI Test Project</h3>
+                                                <div class="project-status1">
+                                                    <h5>Status: </h5> <p style="color: green;">Finished</p> 
+                                                    <!-- <i class="fa fa-calendar"></i> &nbsp; 18/01/2017 -->
+                                                    <!-- <span><i class="fa fa-heart"></i> &nbsp; 53</span> -->
+                                                </div>
+                                                <p>
+                                                    Website built with React.js to connect to and use the Star Wars API   
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>            
+                                    <div class="col-md-4 col-sm-4">
+                                        <a target="_blank" href="https://globalgamejam.org/2020/games/restore-3" class="thumbnail project-thumbnail">
+                                            <img src="Resources/restore.png" alt="">
+                                            <div class="caption">
+                                                <h3>Restore</h3>
+                                                <div class="project-status1">
+                                                    <!-- <h5>Status: </h5> <p style="color: green;">Active</p>  -->
+                                                    <!-- <i class="fa fa-calendar"></i> &nbsp; 18/01/2017 -->
+                                                    <!-- <span><i class="fa fa-heart"></i> &nbsp; 53</span> -->
+                                                </div>
+                                                <p>
+                                                    Restore is a simple quick game I worked on for Global Game Jam 2020
+
+This game is about putting pieces together while bees try to hinder you from doing so.
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>                                    
+                                </div>    
+
+                            </div>
+                            <ol class="carousel-indicators">
+                                <li data-target="#blog_posts" data-slide-to="0" class="active"></li>
+                                <li data-target="#blog_posts" data-slide-to="1" class=""></li>
+                                <!-- <li data-target="#blog_posts" data-slide-to="2" class=""></li> -->
+                            </ol>
+                        </div>
+                    </div>
+                    <!-- end row -->
+                </div>
+                <!-- end container -->
+            </section>
+
+<!-- start quote -->
+<div id="quote" class="content bg parallax4" data-scrollview="true">
+    <!-- start container -->
+    <div class="container" data-animation="true" data-animation-type="fadeIn">
+        <!-- start row -->
+        <div class="row">
+            <!-- start col-12 -->
+            <div class="col-md-12 quote">
+                <i class="fa fa-quote-left"></i> 
+                Ita Splendeat Lux Vestra.
+                <!-- Mauris egestas dignissim sapien aliquam laoreet. -->
+                <i class="fa fa-quote-right"></i>
+                <!-- <small>Alice Jhonson</small> -->
+            </div>
+            <!-- end col-12 -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+</div>
+<!-- end quote -->
+
+            <div id="services" class="content" data-scrollview="true">
+                <div class="light-wrapper">
+                    <div class="container" data-animation="true" data-animation-type="fadeInDown">
+                        <h2 class="content-heading" data-animation="true" data-animation-type="fadeInDown"><span class="title-color">Services</span> </h2>
+                        <div class="divider text-center">
+                            <span class="outer-line"></span>
+                            <span class="fa fa-cogs" aria-hidden="true"></span>
+                            <span class="outer-line"></span>
+                        </div>
+                        <p class="content-desc" data-animation="true" data-animation-type="fadeInDown">
+                            <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur eros dolor,<br>
+                            sed bibendum turpis luctus eget -->
+                        </p>
+                        <div class="row">
+                            <!-- start service item -->
+                            <div class="col-md-4 col-sm-6 space-20" >
+                                <div class="service-item-box text-center">
+                                    <!-- <a href="#"><i class="icon fa fa-leaf"></i></a> -->
+                                    <h2>Game Development</h2>
+                                    <p>
+                                            <img class="service-icon" src="Resources/game-dev-icon.png" alt=""/>
+                                </div>						
+                            </div> 
+                            <!-- end service item -->
+                            <!-- start service item -->
+                            <div class="col-md-4 col-sm-6 space-20" >
+                                <div class="service-item-box text-center">
+                                    <!-- <a href="#"><i class="icon fa fa-anchor"></i></a> -->
+                                    <h2>Web Development</h2>
+                                    <p>
+                                        <img class="service-icon" src="Resources/web-dev-icon.png" alt=""/>
+                                    </p>			
+                                </div>						
+                            </div> 
+                            <!-- end service item -->
+                            <!-- start service item -->
+                            <div class="col-md-4 col-sm-6 space-20" >
+                                <div class="service-item-box text-center">
+                                    <!-- <a href="#"><i class="icon fa fa-comments-o"></i></a> -->
+                                    <h2>App Development</h2>
+                                    <p>
+                                        <img class="service-icon" src="Resources/app-dev-icon.png" alt=""/>
+                                    </p>			
+                                </div>						
+                            </div> 
+                            
+                            <!-- <div class="col-md-4 col-sm-6 space-20" >
+                                <div class="service-item-box text-center">
+                                    <a href="#"><i class="icon fa fa-support"></i></a>
+                                    <h3>Technical Support</h3>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                        Vestibulum posuere augue eget ante porttitor fringilla. 
+                                    </p>			
+                                </div>						
+                            </div> 
+
+                            <div class="col-md-4 col-sm-6 space-20" >
+                                <div class="service-item-box text-center">
+                                    <a href="#"><i class="icon fa fa-cogs"></i></a>
+                                    <h3>Responsive Design</h3>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                        Vestibulum posuere augue eget ante porttitor fringilla. 
+                                    </p>			
+                                </div>						
+                            </div> 
+
+                            <div class="col-md-4 col-sm-6 space-20" >
+                                <div class="service-item-box text-center">
+                                    <a href="#"><i class="icon fa fa-file-pdf-o"></i></a>
+                                    <h3>Well Documented</h3>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                        Vestibulum posuere augue eget ante porttitor fringilla. 
+                                    </p>			
+                                </div>						
+                            </div>  -->
+                            <!-- end service item -->
+                        </div>
+                        <!--end row --> 
+                    </div>
+                    <!-- enf container --> 
+                </div>
+                <!-- end light-wrapper -->
+            </div>
+
+            <!-- start contact -->
+            <section id="contactus" style="background-color: rgb(0, 0, 0); display: none;" class="contactus content" data-scrollview="true">
+                <div class="container" data-animation="true" data-animation-type="fadeInUp">
+                    <!-- <h2 class="content-heading" data-animation="true" data-animation-type="fadeInDown"><span class="title-color">CONTACT</span></h2> -->
+                    <div class="divider text-center" style="color: white;">
+                        <span class="outer-line" style="color: white;"></span>
+                        <span class="fa fa-envelope" style="color: white;" aria-hidden="true"></span>
+                        <span class="outer-line" style="color: white;"></span>
+                    <!-- </div>
+                    <p class="content-desc" data-animation="true" data-animation-type="fadeInDown" style="color: white;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur eros dolor,<br>
+                        sed bibendum turpis luctus eget
+                    </p> -->
+                </div>
+                <!-- <div id="contactmap" style="width: 100%; height: 400px;"></div> -->
+                <!-- start container -->
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm">
-                            <img src="./Resources/unity.png" alt="">
-                        </div>
-                        <div class="col-sm">
-                            <img src="./Resources/csharp.png" alt="">
-                        </div>
-                        <div class="col-sm">
-                            <img src="./Resources/netcore.png" alt="">
+                        <div class="col-md-8 col-md-offset-2">
+                            <ul class="contact-info list-inline text-center" style="color: white;">
+                                <!-- <li>
+                                    <i class="fa fa-map-marker"></i>
+                                    <p>
+                                        Moonshine St. 14/05 Light City
+                                    </p>
+                                </li> -->
+                                <li>
+                                    <i class="fa fa-envelope"></i>
+                                    <p>
+                                        <a style="color: white;" href="mailto:joshtimallendev@gmail.com" class="nocolor">joshtimallendev@gmail.com</a>
+                                    </p>
+                                </li>
+                                <!-- <li>
+                                    <i class="fa fa-phone"></i>
+                                    <p>
+                                        00 (123) 456 78 90
+                                    </p>
+                                </li> -->
+                            </ul>
+                            <!-- <div class="form-container">
+                                <form name="contact-form" id="contact-form" action="javascript:void(0);" method="post">
+                                    <div class="row">
+
+                                        <div class="col-sm-12 text-center">
+                                            <p class="successmsg">
+                                                Mail sent successfully.
+                                            </p>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-field">
+                                                <label>Your name*
+                                                    <input type="text" name="name" id="name" required="required">
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-field">
+                                                <label>Your e-mail*
+                                                    <input type="email" name="email" id="email" required="required">
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-field">
+                                                <label>Subject
+                                                    <input type="text" name="subject" id="subject">
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-field">
+                                                <label>Your Phone
+                                                    <input type="tel" name="tel" id="tel" onkeypress="return KeycheckOnlyNumeric(event);" maxlength="13" required="required">
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-field">
+                                                <label>Your Message*
+                                                    <textarea name="message" id="message" required></textarea>
+                                                </label>
+                                                <div class="text-center">
+                                                    <input type="submit" name="submit_contact" id="submit_contact" class="btn" value="Send Message">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div> -->
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="line"></div>
-        </section>
-        <section id="Projects">
-            <h2 class="text-center">Projects</h2> 
-            <div class="line-container">
-                <div class="line-80"></div>
-            </div>             
-            <div style="padding: 50px; display: flex; width: 100vw; justify-content: center; align-items: center; text-align: center;">
+                <!-- container --> 
+            </section>
+            <!-- end contact -->
+            <!-- start footer -->
+            <footer id="contact" class="footer">
+                <!-- <i class="fa fa-envelope"></i> -->
+                                    <p>
+                                        <a style="color: white;" href="mailto:joshtimallendev@gmail.com" class="nocolor">joshtimallendev@gmail.com</a>
+                                    </p>
                 <div class="container">
-                    <div class="project-section">
-                    
-                    <div class="project-cotainer">
-                    <div style="text-align: center; padding: 20px; flex: 1;" class="project-intro align-content-center align-items-center d-flex flex-column justify-content-center">
-                        <h4><a class="project-heading" href="https://play.google.com/store/apps/details?id=com.JoshTimAllen.AthleticGamess" target=".">Athletic Games</a> </h4>
-                        <img src="./Resources/athleticgamesicon.png" alt="">
-                        <a href="athleticgamesmobile/" class="bg-warning btn btn-light" type="button">Visit</a>
-                    </div>
-                    <div class="project-details">
-                    <p> 
-
-                        Athletic Games is a Track and Field themed mobile game that brings a similar but unique approach to gameplay compared to others of its type.
-                        It consists of events such as 100m, 200, 400m, 400m Hurdles, 4x400m Relays, Mixed Relays, etc.
-                        <br>
-                        <br>
-                        The inspiration to make the game came from the fact that I did track and field in high school and fell in love with the sport. I was not the best
-                        at the sport and did not achieve the best results, however, my experience lead me to create my best and prized possession. 
-                        <!-- In addition, after training,
-                         some of my teammates an I would play against each other in the game Mini Militia, so I had an idea that I could make a Track and Field game in which 
-                         we could play against each other, however it did not get to the point but the desire to create the game with that featujre remains -->
-                        <!-- <br>
-                        <br> -->
-                        <!-- <h5>Status:</h5> -->
-                        
+                    <p class="social-list">
+                        <a target="_blank" href="https://www.instagram.com/athleticgamesmobile"><i class="fa fa-instagram fa-fw"></i></a>
+                        <a target="_blank" href="https://www.twitter.com/allentimjosh"><i class="fa fa-twitter fa-fw"></i></a>
+                        <a href="#"><i class="fa fa-discord"></i></a>
                     </p>
-                    </div>
+                    <br>
+                    <p>
+                        <a target="_blank" href="https://www.templateshub.net"> Template from Templates Hub</a>
+                    </p>
                 </div>
+            </footer>
+            <!-- end footer -->
+            <!-- start theme-settings -->
+            <!-- <div class="theme-settings">
+                <a href="javascript:;" data-click="theme-settings-expand" class="theme-collapse-btn"><i class="fa fa-cog fa-spin"></i></a>
+                <div class="theme-settings-content">
+                    <ul class="theme-list clearfix">
+                        <li><a href="javascript:void(0);" class="bg-purple" data-theme="purple"></a></li>
+                        <li><a href="javascript:void(0);" class="bg-blue" data-theme="blue"></a></li>
+                        <li><a href="javascript:void(0);" class="bg-orange" data-theme="orange"></a></li>
+                        <li><a href="javascript:void(0);" class="bg-green" data-theme="green"></a></li>
+                        <li class="active"><a href="javascript:void(0);" class="bg-pink" data-theme="default"></a></li>
+                    </ul>
                 </div>
-
-                <div class="project-divide-line"></div>
-
-                    <div class="project-section">                       
-                    <div class="project-cotainer">
-                        <div class="project-details">
-                            <p> 
-                                Restore is a simple quick game I worked on for <a href="https://jgds.org/gamejams.html" target="." style="text-decoration: underline; color: rgb(38, 38, 226) !important;">Global Game Jam 2020</a>
-                                <br>
-                                <br>
-                                This game is about putting pieces together while bees try to hinder you from doing so. 
-                                
-                                <!-- <h5>Status:</h5> -->
-                                
-                            </p>
-                            </div>
-                    <div style="text-align: center; padding: 20px; flex: 1;" class="project-intro align-content-center align-items-center d-flex flex-column justify-content-center">
-                        <h4><a class="project-heading" href="https://globalgamejam.org/2020/games/restore-3" target=".">Restore</a> </h4>
-                        <img src="./Resources/restore.png" alt="">
-                        <a href="https://globalgamejam.org/2020/games/restore-3" target="." class="bg-warning btn btn-light" type="button">Visit</a>
-                    </div>                    
-                </div>
-                </div>
-                
-                <div class="project-divide-line"></div>
-                    
-                <div class="project-section">                       
-                    <div class="project-cotainer">                        
-                    <div style="text-align: center; padding: 20px; flex: 1;" class="project-intro align-content-center align-items-center d-flex flex-column justify-content-center">
-                        <h4><a class="project-heading" href="https://jgds.org" target=".">jgds.org</a> </h4>
-                        <img src="./Resources/jgds-image.png" alt="">
-                        <a href="https://jgds.org" target="." class="bg-warning btn btn-light" type="button">Visit</a>
-                    </div>
-                    <div class="project-details">
-                        <p> 
-                            Website built for Jamaica Game Developer Society
-                            
-                            <!-- <h5>Status:</h5> -->
-                            
-                        </p>
-                        </div>             
-                </div>
-                </div>
-                
-                <div class="project-divide-line"></div>
-
-                <div class="project-section">                       
-                    <div class="project-cotainer">
-                        <div class="project-details">
-                            <p> 
-                                Website built with React.js to connect to and use the
-                                <a href="https://swapi.dev/" target="." style="text-decoration: underline; color: rgb(38, 38, 226) !important;"> Star Wars API</a>
-                                
-                                <!-- <h5>Status:</h5> -->
-                                
-                            </p>
-                        </div>
-                    <div style="text-align: center; padding: 20px; flex: 1;" class="project-intro align-content-center align-items-center d-flex flex-column justify-content-center">
-                        <h4><a class="project-heading" href="https://swapi-test-project.herokuapp.com/" target=".">SWAPI Test Project</a> </h4>
-                        <img src="./Resources/Swapi-Image.png" alt="">
-                        <a href="https://swapi-test-project.herokuapp.com/" target="." class="bg-warning btn btn-light" type="button">Visit</a>
-                    </div>                    
-                </div>
-                </div>
-
-                <div class="project-divide-line"></div>
-
-                <div class="project-section">                       
-                    <div class="project-cotainer">                        
-                    <div style="text-align: center; padding: 20px; flex: 1;" class="project-intro align-content-center align-items-center d-flex flex-column justify-content-center">
-                        <h4><a class="project-heading" href="https://piktok.herokuapp.com/" target=".">PikTok</a> </h4>
-                        <img src="./Resources/piktok-image.png" alt="">
-                        <a href="https://piktok.herokuapp.com/" target="." class="bg-warning btn btn-light" type="button">Visit</a>
-                    </div>
-                    <div class="project-details">
-                        <p> 
-                            PikTok is a social media website with the ability to make media posts, follow users and like posts. (Currently working on fixing chat messages)
-                            <br>
-                            <br>
-                            Built with ASP.Net Core MVC and connects to MongoDB.
-                            <br>
-                            <br>
-                            <br>
-                            If you visit, you may use a fake email or make up one on spot, login and search for 'Josh' or 'Tim' and follow to see posts on the home page.
-                            <!-- <h5>Status:</h5> -->
-                            
-                        </p>
-                        </div>             
-                </div>
-                </div>
-                
-                <div class="project-divide-line"></div>
-
-                <div class="project-section">                       
-                    <div class="project-cotainer">
-                        <div class="project-details">
-                            <p> 
-                                Toohak is an attempt at making a copy of the popular Kahoot game. It only accepts inputs for questions so far, no gameplay as yet.
-                                <br>
-                                <br>
-                                It is an ASP.Net Core Blazor server application.
-                                <!-- <h5>Status:</h5> -->
-                                
-                            </p>
-                        </div>
-                    <div style="text-align: center; padding: 20px; flex: 1;" class="project-intro align-content-center align-items-center d-flex flex-column justify-content-center">
-                        <h4><a class="project-heading" href="https://toohakk.herokuapp.com/" target=".">Toohak</a> </h4>
-                        <img src="./Resources/toohak-image.png" alt="">
-                        <a href="https://toohakk.herokuapp.com/" target="." class="bg-warning btn btn-light" type="button">Visit</a>
-                    </div>                    
-                </div>
-                </div>
-
-                    <!-- <div class="row">
-                        <div class="col-md">
-                            <div style="text-align: center; padding: 20px;" class="align-content-center align-items-center d-flex flex-column justify-content-center">
-                                <h5><a href="https://play.google.com/store/apps/details?id=com.JoshTimAllen.AthleticGamess" target="." style="text-decoration: underline;">Athletic Games</a> </h5>
-                                <img src="./Resources/athleticgamesicon.png" alt="">
-                                <a href="athleticgamesmobile/" class="bg-warning btn btn-light" type="button">More details</a>
-                            </div>
-                        </div>
-                        <div class="col-md">
-                            <div class="col-sm">
-                                <div style="text-align: center; padding: 20px;" class="align-content-center align-items-center d-flex flex-column justify-content-center">
-                                    <h5><a href="https://globalgamejam.org/2020/games/restore-3" target="." style="text-decoration: underline;">Restore</a> </h5>
-                                    <img src="./Resources/restore.png" alt="">
-                                    <a href="https://globalgamejam.org/2020/games/restore-3" target="." class="bg-warning btn btn-light" type="button">More details</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md">
-                            <div class="col-sm">
-                                <div style="text-align: center; padding: 20px;" class="align-content-center align-items-center d-flex flex-column justify-content-center">
-                                    <h5><a href="https://jgds.org" target="." style="text-decoration: underline;">JGDS.ORG</a></h5>
-                                    <br>
-                                    <br>
-                                    <a href="https://jgds.org" target="_blank" style="font-size: 50px; text-decoration: underline; color: rgb(56, 56, 243) !important;">JGDS.ORG</a>
-                                    <p>(Website for Jamaica Game Developer Society)</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md">
-                            <div class="col-sm">
-                                <div style="text-align: center; padding: 20px;" class="align-content-center align-items-center d-flex flex-column justify-content-center">
-                                    <h5><a href="https://swapi-test-project.herokuapp.com/" target="." style="text-decoration: underline;">SWAPI Test Project</a> </h5>
-                                    <img src="./Resources/Swapi-Image.png" alt="">
-                                    <a href="https://swapi-test-project.herokuapp.com/" target="." class="bg-warning btn btn-light" type="button">More details</a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div> -->
-                </div>
-            </div>
-            <div class="line"></div>             
-        </section>
-        <footer id="Contacts" style="text-align: center; padding: 20px; background-color: #000000;">
-            <div class="container">
-                <div class="row">
-                    <!-- <div class="col-sm">
-                        <p>phone number was here</p>
-                    </div> -->
-                    <div class="col-sm">
-                        <a style="color: green !important; text-decoration: underline;" href="mailto:joshtimallendev@gmail.com">joshtimallendev@gmail.com</a> 
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    </body>     
+            </div> -->
+            <!-- end theme-settings -->
+            <a href="javascript:void(0);" id="scroll-to-top"><i class="fa fa-arrow-up"></i></a>
+        </div>
+        <!-- end main-container -->
+        <!-- START JS  -->
+        <script src="js/jquery-1.12.4.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZEvpuCCcKno-6SK9VektANgv4Q-3ckuA&libraries=places"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="assets/crossbrowserjs/html5shiv.js"></script>
+        <script src="assets/crossbrowserjs/respond.min.js"></script>
+        <script src="assets/crossbrowserjs/excanvas.min.js"></script>
+        <![endif]-->
+        <script src="js/scroll.js"></script>
+        <script src="js/popup.js"></script>
+        <script src="js/map.min.js"></script>
+        <script src="js/scripts.js"></script>
+        <!--  END JS  -->
+    </body>
 </html>
