@@ -57,3 +57,14 @@ section {
     width: 100%;
     justify-content: center;
 }
+
+.nav li a {
+    font-size: small !important;
+}
+
+.navbar-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
