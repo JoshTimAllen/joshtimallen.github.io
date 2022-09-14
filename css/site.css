@@ -7,11 +7,14 @@ h2,
 h3,
 h4,
 h5,
-h6,
+h6 {
+    font-family: "Orbitron", sans-serif !important;
+}
+
 div,
 a,
 p {
-    font-family: "Orbitron", sans-serif !important;
+    font-family: 'Roboto Flex', sans-serif !important;
 }
 
 section {
@@ -60,6 +63,7 @@ section {
 
 .nav li a {
     font-size: small !important;
+    font-family: "Orbitron", sans-serif !important;
 }
 
 .navbar-nav {
@@ -67,4 +71,8 @@ section {
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+p {
+    font-size: 17px;
 }
