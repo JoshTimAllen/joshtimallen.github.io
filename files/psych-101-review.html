@@ -1,0 +1,359 @@
+<title>Psych 101 Review</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap">
+<style>
+/* Layout: one narrow column like a stack of index cards; highlighter yellow marks what matters, ink blue is the action color. */
+:root{
+  --bg:#F3F4F8; --surface:#FFFFFF; --sunk:#E8EAF1; --fg:#171B2B; --muted:#5B6177; --line:#D6D9E4;
+  --ink:#2A44C8; --ink-fg:#FFFFFF; --ink-soft:#E4E8FB; --hi:#FFE14D; --hi-fg:#3A3000;
+  --ok:#17803D; --ok-soft:#DFF3E5; --bad:#B42318; --bad-soft:#FBE4E1;
+  --display:"Bricolage Grotesque", "Arial Narrow", system-ui, sans-serif;
+  --body:"Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --r:14px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#10131C; --surface:#1A1E2B; --sunk:#232838; --fg:#E9ECF5; --muted:#A1A7BC; --line:#2F3547;
+  --ink:#8FA2FF; --ink-fg:#0E1430; --ink-soft:#252D4F; --hi:#E9CB2F; --hi-fg:#231D00;
+  --ok:#5DD08A; --ok-soft:#163323; --bad:#FF8A7E; --bad-soft:#3A1C1A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#10131C; --surface:#1A1E2B; --sunk:#232838; --fg:#E9ECF5; --muted:#A1A7BC; --line:#2F3547;
+  --ink:#8FA2FF; --ink-fg:#0E1430; --ink-soft:#252D4F; --hi:#E9CB2F; --hi-fg:#231D00;
+  --ok:#5DD08A; --ok-soft:#163323; --bad:#FF8A7E; --bad-soft:#3A1C1A; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.55;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:20px 48px}
+.wrap{max-width:620px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+header{display:flex;flex-direction:column;gap:6px}
+.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(30px,8vw,40px);line-height:1.05;margin:0;text-wrap:balance}
+h1 mark{background:linear-gradient(transparent 55%, var(--hi) 55%);color:inherit;padding:0 2px}
+.sub{color:var(--muted);margin:0;font-size:15px}
+.seg{display:grid;grid-template-columns:1fr 1fr;background:var(--sunk);border-radius:12px;padding:4px;gap:4px}
+.seg button{border:0;background:transparent;color:var(--muted);font:700 15px var(--body);padding:10px 8px;border-radius:9px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--fg);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+select{flex:1 1 220px;min-width:0;font:15px var(--body);color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.check{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);cursor:pointer}
+.check input{width:18px;height:18px;accent-color:var(--ink)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;display:flex;flex-direction:column;gap:12px}
+.unit{font-family:var(--display);font-weight:600;font-size:17px;line-height:1.2;margin:0;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:12px;font-weight:700;letter-spacing:.03em;padding:3px 8px;border-radius:999px;background:var(--sunk);color:var(--muted)}
+.tag.extra{background:var(--hi);color:var(--hi-fg)}
+.q{font-size:19px;line-height:1.45;margin:0;font-weight:700}
+.opts{display:flex;flex-direction:column;gap:8px;list-style:none;margin:0;padding:0}
+.opt{display:flex;gap:10px;align-items:flex-start;width:100%;text-align:left;font:16px/1.4 var(--body);color:var(--fg);background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:11px 12px;cursor:pointer}
+.opt b{flex:none;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:13px;background:var(--sunk);color:var(--muted)}
+.opt span{min-width:0}
+.opt.sel{border-color:var(--ink);background:var(--ink-soft)}
+.opt.sel b{background:var(--ink);color:var(--ink-fg)}
+.opt.right{border-color:var(--ok);background:var(--ok-soft)}
+.opt.right b{background:var(--ok);color:var(--surface)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.opt.wrong b{background:var(--bad);color:var(--surface)}
+.opt:disabled{cursor:default}
+.explain{background:var(--hi);color:var(--hi-fg);border-radius:10px;padding:10px 12px;font-size:15px;margin:0}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row.spread{justify-content:space-between}
+.btn{font:700 15px var(--body);border-radius:10px;padding:11px 16px;cursor:pointer;border:1.5px solid var(--line);background:var(--surface);color:var(--fg)}
+.btn.primary{background:var(--ink);border-color:var(--ink);color:var(--ink-fg)}
+.btn.grow{flex:1 1 auto}
+.btn:focus-visible,.opt:focus-visible,select:focus-visible,.seg button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.count{font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+.bar{height:8px;background:var(--sunk);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--ink);border-radius:99px;transition:width .2s}
+.sizes{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.sizes button{font:700 15px var(--body);padding:10px 4px;border-radius:10px;border:1.5px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer}
+.sizes button[aria-pressed="true"]{border-color:var(--ink);background:var(--ink-soft)}
+.label{font-size:13px;font-weight:700;color:var(--muted);margin:0}
+.big{font-family:var(--display);font-weight:800;font-size:56px;line-height:1;margin:0;font-variant-numeric:tabular-nums}
+.verdict{margin:0;font-size:16px}
+.ub{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;align-items:center;font-size:14px}
+.ub .bar{grid-column:1 / -1;height:6px}
+.miss{border-top:1px solid var(--line);padding-top:12px;display:flex;flex-direction:column;gap:6px}
+.miss p{margin:0;font-size:15px}
+.yours{color:var(--bad)} .correct{color:var(--ok);font-weight:700}
+.warn{background:var(--bad-soft);color:var(--bad);border-radius:10px;padding:10px 12px;font-size:15px;margin:0}
+.tip{font-size:14px;color:var(--muted);margin:0}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">UTech · Intro to Psychology</span>
+    <h1>Psych 101 <mark>Review</mark></h1>
+    <p class="sub">Units 1–8. Every practice quiz question, plus extra questions likely to show up on Friday.</p>
+  </header>
+
+  <div class="seg" role="group" aria-label="Mode">
+    <button id="mStudy" aria-pressed="true">Study cards</button>
+    <button id="mTest" aria-pressed="false">Practice test</button>
+  </div>
+
+  <div class="controls">
+    <select id="unit" aria-label="Unit"></select>
+    <label class="check"><input type="checkbox" id="pqOnly"> Practice quiz only</label>
+  </div>
+
+  <!-- STUDY -->
+  <section id="study" class="card" aria-live="polite">
+    <p class="unit" id="sUnit"></p>
+    <div class="tags" id="sTags"></div>
+    <p class="q" id="sQ"></p>
+    <ul class="opts" id="sOpts"></ul>
+    <p class="explain" id="sExp" hidden></p>
+    <button class="btn primary" id="sReveal">Show answer</button>
+    <div class="row spread">
+      <button class="btn" id="sPrev">Back</button>
+      <span class="count" id="sCount"></span>
+      <button class="btn" id="sNext">Next</button>
+    </div>
+    <div class="row"><button class="btn grow" id="sShuf">Shuffle</button></div>
+  </section>
+
+  <!-- TEST SETUP -->
+  <section id="setup" class="card" hidden>
+    <p class="unit">Set up your test</p>
+    <p class="label">How many questions?</p>
+    <div class="sizes" id="sizes">
+      <button data-n="10" aria-pressed="true">10</button>
+      <button data-n="20" aria-pressed="false">20</button>
+      <button data-n="30" aria-pressed="false">30</button>
+      <button data-n="0" aria-pressed="false">All</button>
+    </div>
+    <p class="tip" id="pool"></p>
+    <p class="tip" id="best"></p>
+    <button class="btn primary" id="start">Start test</button>
+  </section>
+
+  <!-- TEST RUN -->
+  <section id="run" class="card" hidden>
+    <div class="row spread"><span class="count" id="tCount"></span><button class="btn" id="tQuit">Quit</button></div>
+    <div class="bar"><i id="tBar"></i></div>
+    <p class="unit" id="tUnit"></p>
+    <p class="q" id="tQ"></p>
+    <ul class="opts" id="tOpts"></ul>
+    <p class="warn" id="tWarn" hidden></p>
+    <div class="row">
+      <button class="btn" id="tBack">Back</button>
+      <button class="btn primary grow" id="tNext">Next</button>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section id="results" class="card" hidden>
+    <p class="label">Your score</p>
+    <p class="big" id="rPct"></p>
+    <p class="verdict" id="rLine"></p>
+    <div id="rUnits" style="display:flex;flex-direction:column;gap:10px"></div>
+    <div class="row">
+      <button class="btn primary grow" id="rRetry">Retake missed questions</button>
+      <button class="btn grow" id="rNew">New test</button>
+    </div>
+    <div id="rMiss" style="display:flex;flex-direction:column;gap:12px"></div>
+  </section>
+</div>
+
+<script>
+const UNITS={1:"Unit 1 · Historical Overview",2:"Unit 2 · Thinking like a Psychologist",3:"Unit 3 · Biological Influences on Behaviour",4:"Unit 4 · States of Consciousness",5:"Unit 5 · Lifespan Development",6:"Unit 6 · Principles of Learning",7:"Unit 7 · Memory & Forgetting",8:"Unit 8 · Motivation & Emotion"};
+const P=1,X=0;
+const Q=[
+{u:1,s:P,q:"Psychology is the scientific study of ______.",o:["behavior and mental processes","how cultures and societies develop and interact","the physiological functions of the brain","how personality can be told from the shape of one's head"],a:0,e:"The standard definition: behavior (what you do) and mental processes (thinking, memory, feelings)."},
+{u:1,s:P,q:"Locke believed that at the moment of birth the mind contains ______ innate knowledge.",o:["no","some","all","physical"],a:0,e:"Fill the blank with 'no'. Locke said the mind starts as a blank slate (tabula rasa), and all knowledge comes from experience."},
+{u:1,s:P,q:"Structuralism emphasizes ______.",o:["the application of biological principles to the mind","the influence of subconscious urges on conscious behavior","the basic units of experience and their combinations","individual differences"],a:2,e:"Structuralism (Wundt and Titchener) used introspection to break the mind into its basic parts, its 'structures.'"},
+{u:1,s:P,q:"The first psychology laboratory was founded by ______.",o:["James","Titchener","Wundt","Watson"],a:2,e:"Wilhelm Wundt, the father of psychology, built the first lab in Germany in 1879. Trick: Wundt Was first."},
+{u:1,s:P,q:"The school of thought that became known as behaviorism was founded by ______.",o:["Watson","Titchener","James","Wundt"],a:0,e:"John B. Watson said psychology should study only observable behavior. Trick: Watson = Watch behavior."},
+{u:1,s:P,q:"______ are especially interested in how behavior, thoughts, and emotions are affected by physical conditions.",o:["Humanistic psychologists","Behavioral psychologists","Physiological psychologists","Cognitive psychologists"],a:2,e:"Physiological means the body. They study how the body and brain affect behavior."},
+{u:2,s:P,q:"In a drug experiment, one group gets the drug and the other gets a pill with no medicine that looks and tastes the same. The group getting the fake pill is the ______ group.",o:["dependent","control","independent","experimental"],a:1,e:"The control group gets the placebo and is used for comparison. The group getting the real drug is the experimental group."},
+{u:2,s:P,q:"A researcher manipulates one variable to see how it affects a second. The second variable, which is observed for effects, is the ______ variable.",o:["hypothetical","control","independent","dependent"],a:3,e:"Dependent = the Data you measure. Independent = what I change."},
+{u:2,s:P,q:"In research, a large group of people whom you want to know about is called a ______.",o:["population","treatment group","control group","sample"],a:0,e:"Population is the textbook answer. A sample is the smaller group you actually study. Your practice quiz marked this wrong, so ask your teacher."},
+{u:2,s:P,q:"Research in which a carefully selected group answers predetermined questions in interviews or questionnaires is ______ research.",o:["correlational","survey","experimental","case study"],a:1,e:"Questionnaires, polls, and interviews are survey research."},
+{u:3,s:P,q:"A group of axons bundled together is called a ______.",o:["myelinated pathway","primary cluster","synaptic vesicle","nerve"],a:3,e:"A bundle of axons is a nerve."},
+{u:3,s:P,q:"Andrew sleeps constantly but is always tired, feels too hot or too cold, and has lost muscle tone. The source of his problem is probably an ______ gland.",o:["underactive pituitary","overactive pituitary","overactive thyroid","underactive thyroid"],a:3,e:"The thyroid controls metabolism. Underactive (hypo = low = slow) means tired and sluggish."},
+{u:3,s:P,q:"At midnight you hear a loud crash. Your pupils dilate, heart races, blood pressure rises, and adrenaline surges. These reactions are produced by the ______.",o:["sympathetic division","central nervous system","parasympathetic division","somatic nervous system"],a:0,e:"Emergency reactions are fight or flight, which is the sympathetic division."},
+{u:3,s:P,q:"The branch of the autonomic nervous system that prepares the body for quick action in an emergency is the ______ division.",o:["secondary","parasympathetic","central","sympathetic"],a:3,e:"Sympathetic = Stress. Parasympathetic = Peace (rest and digest)."},
+{u:3,s:P,q:"The cell that underlies the activity of the entire nervous system is the ______.",o:["neuron","T-cell","epidermal cell","glial cell"],a:0,e:"Neurons are the basic units. Glial cells only support them."},
+{u:3,s:P,q:"The cerebellum ______.",o:["is involved in emotional behavior","coordinates actions so that movements are efficient","controls blood pressure","relays messages from the sensory receptors"],a:1,e:"Cerebellum = balance and smooth movement. Blood pressure is the medulla; the sensory relay is the thalamus."},
+{u:3,s:P,q:"The hemisphere most involved in preserving one's sense of identity or 'self' is the ______ hemisphere.",o:["left","front","rear","right"],a:3,e:"The right hemisphere. Only left and right are hemispheres."},
+{u:3,s:P,q:"The nervous system is made up of two major parts: ______.",o:["the brain and the spinal cord","the sympathetic and parasympathetic nervous systems","the central nervous system and the peripheral nervous system","the afferent and efferent nervous systems"],a:2,e:"CNS + PNS. The brain and spinal cord make up only the CNS."},
+{u:3,s:P,q:"The part of the hindbrain that controls breathing, heart rate, and blood pressure is the ______.",o:["pons","cerebral cortex","cerebellum","medulla"],a:3,e:"The medulla controls life-sustaining functions. Damage can cause brain death."},
+{u:3,s:P,q:"Todd's identical twin brother has schizophrenia. The odds are one out of ______ that Todd will too.",o:["six","eight","four","two"],a:3,e:"About 48%, roughly 1 in 2. The general population's risk is about 1%."},
+{u:5,s:P,q:"Amy is 5 and entering kindergarten. According to Erikson, her main task is to develop a sense of ______.",o:["trust","initiative","generativity","autonomy"],a:1,e:"Ages 3 to 6 is initiative vs. guilt."},
+{u:5,s:P,q:"Chad, 3, insists on buying his daddy a toy truck for his birthday. This is an example of ______.",o:["conservation","ethnocentrism","egocentrism","anthropomorphism"],a:2,e:"He can't see things from his dad's point of view, so he picks what he would want."},
+{u:5,s:P,q:"Games like peek-a-boo and hide-and-seek are worthwhile for babies because they help develop a sense of ______.",o:["visual discrimination","perceptual set","object permanence","depth perception"],a:2,e:"Object permanence: things still exist when you can't see them. Sensorimotor stage."},
+{u:5,s:P,q:"John makes his bed every morning because his mother gives him a dollar for it. According to Kohlberg, John is at which level?",o:["postconventional","moral realism","preconventional","conventional"],a:2,e:"Preconventional = based on reward and punishment."},
+{u:5,s:P,q:"Judy is 9 and in fourth grade. Erikson believes her main task is to develop a sense of ______.",o:["initiative","trust","industry","autonomy"],a:2,e:"Ages 6 to 12 is industry vs. inferiority."},
+{u:5,s:P,q:"Larry hates red flannel shirts, but all his friends wear them, so he does too. According to Kohlberg, Larry is at which stage?",o:["postconventional","conventional","moral realism","preconventional"],a:1,e:"Conventional = fitting in and gaining others' approval."},
+{u:5,s:P,q:"Morality based on abstract principles such as justice, liberty, and equality, regardless of existing social rules, is the ______ level.",o:["preconventional","precognitive","conventional","postconventional"],a:3,e:"Postconventional = principles beyond society's rules."},
+{u:5,s:P,q:"The first stage of Erikson's theory is the challenge of ______.",o:["basic trust versus mistrust","industry versus inferiority","autonomy versus shame and doubt","identity versus role diffusion"],a:0,e:"Trust vs. mistrust, from birth to 1 year."},
+{u:5,s:P,q:"Which of the following is a true statement about parenting?",o:["Permissiveness is the best approach in child rearing.","The best approach combines permissive rules with severe punishment for breaking them.","The best approach puts a strong emphasis on firmness as well as encouragement.","Authoritarianism is the best approach in child rearing."],a:2,e:"Firm but warm is called authoritative parenting."},
+{u:5,s:P,q:"Which is the correct order of Piaget's four stages of cognitive development?",o:["preoperational, sensorimotor, concrete operational, formal operational","sensorimotor, preoperational, concrete operational, formal operational","preoperational, concrete operational, formal operational, sensorimotor","preoperational, formal operational, sensorimotor, concrete operational"],a:1,e:"Trick: Some People Count Fingers."},
+{u:6,s:P,q:"A girl learns that whenever her older brother shares his cookie with her, their mother gives him candy. The girl's learning is ______.",o:["classical conditioning","social learning theory","operant conditioning","contingency theory"],a:1,e:"She isn't rewarded herself. She learns by watching her brother get rewarded."},
+{u:6,s:P,q:"A reinforcer that removes something unpleasant from a situation is a ______ reinforcer.",o:["primary","secondary","positive","negative"],a:3,e:"Negative = take away. Reinforcement = behavior goes UP."},
+{u:6,s:P,q:"Any event whose presence decreases the likelihood that a behavior will recur is ______.",o:["negative reinforcement","an aversive stimulus","punishment","a secondary reinforcer"],a:2,e:"Anything that makes behavior go DOWN is punishment."},
+{u:6,s:P,q:"Any stimulus that follows a behavior and increases the likelihood that it will be repeated is called a ______.",o:["reinforcer","situational artifact","higher-order conditioner","cue"],a:0,e:"Anything that makes behavior go UP is a reinforcer."},
+{u:6,s:P,q:"Pavlov paired a bell with meat until dogs salivated to the bell alone. Salivation to the bell was the ______.",o:["unconditioned stimulus","unconditioned response","conditioned stimulus","conditioned response"],a:3,e:"The learned response is the CR. Bell = CS, meat = UCS, salivating to meat = UCR."},
+{u:6,s:P,q:"Conditioned taste aversions are found ______.",o:["only in nonhuman animals","in humans and other animals with a well-developed sense of taste","in virtually all animals","only in humans"],a:1,e:"You can only learn to avoid a food by its taste if you can taste it well."},
+{u:6,s:P,q:"Failing to avoid or escape an unpleasant situation because of past exposure to pain you couldn't escape is called ______.",o:["avoidance learning","learned helplessness","aversive conditioning","vicarious learning"],a:1,e:"After repeated pain they can't escape, people stop trying."},
+{u:6,s:P,q:"In Bandura's study, children watched an adult hit an inflated doll. Children who saw the model ______.",o:["rewarded performed more aggressively in free play than children who saw the model punished","punished learned to be more aggressive than children who saw the model rewarded","punished performed more aggressively in free play than children who saw the model rewarded","rewarded learned to be more aggressive than children who saw the model punished"],a:0,e:"The key word is PERFORMED. All the children LEARNED the behavior equally."},
+{u:6,s:P,q:"Many people feel hungry and eat lunch when the clock shows noon, no matter how recently they ate breakfast. The conditioned stimulus is ______.",o:["the food","feeling hungry","the hands of the clock","breakfast"],a:2,e:"The clock was neutral but now triggers hunger because it was paired with eating."},
+{u:6,s:P,q:"Which concept is most closely associated with social learning theory?",o:["shaping","schedules of reinforcement","vicarious learning","higher-order conditioning"],a:2,e:"Vicarious learning = learning by watching others. Shaping and schedules are operant; higher-order is classical."},
+{u:7,s:P,q:"Current research indicates that memories consist of ______.",o:["changes in the internal structures of existing neurons","the creation of new glial cells in memory areas","changes in the synaptic connections among neurons","the creation of new, memory-specific neurons"],a:2,e:"Memories are stored as changes in connections between neurons."},
+{u:7,s:P,q:"Loni memorizes the letters I K T E A L N by reorganizing them into INK and LATE. This tactic is called ______.",o:["rote rehearsal","chunking","shadowing","cueing"],a:1,e:"Chunking groups items into meaningful units, which increases how much STM can hold."},
+{u:7,s:P,q:"The amygdala is most involved in processing ______ memory.",o:["semantic","emotional","episodic","procedural"],a:1,e:"The amygdala handles emotion and fear."},
+{u:7,s:P,q:"The first stage of information processing involves ______.",o:["selecting some of the material bombarding our senses to think about and remember","storing information in your memory banks","encoding information in memory","converting information from short-term to long-term memory"],a:0,e:"Sensory registers take in everything; attention selects what to keep."},
+{u:7,s:P,q:"Linking new information in short-term memory to familiar material in long-term memory is called ______.",o:["rote rehearsal","elaborative rehearsal","overlearning","chunking"],a:1,e:"Elaborative = making it meaningful. Rote (maintenance) = just repeating."},
+{u:7,s:P,q:"The meaning of the word 'psychotropic' would be stored in ______.",o:["eidetic memory","long-term memory","the sensory registers","short-term memory"],a:1,e:"Word meanings are semantic memory, a type of long-term memory."},
+{u:7,s:P,q:"The sensory registers ______.",o:["retain past information","receive sensory information from the external world","control our attention span","are measures of retention"],a:1,e:"Sensory memory is the first stop for information from the senses."},
+{u:7,s:P,q:"The type of memory that is like a diary that lets you 'go back in time' is ______ memory.",o:["procedural","episodic","semantic","emotional"],a:1,e:"Episodic = personal experiences (episodes of your life)."},
+{u:7,s:P,q:"Given a list of items to remember, you are MOST likely to remember the items ______.",o:["at the end more than the middle or beginning","in the beginning and at the end more than the middle","in the middle more than the beginning or end","in the beginning better than the middle or end"],a:1,e:"The serial position effect: primacy (start) and recency (end)."},
+{u:7,s:P,q:"When you listen to a song or watch TV, you use ______ to hold and think about new information from the sensory registers.",o:["memory icons","short-term memory","long-term memory","shadow memory"],a:1,e:"Short-term (working) memory holds what you're thinking about right now."},
+
+{u:1,s:X,q:"Which school of psychology, led by William James, focused on the function or purpose of consciousness?",o:["Structuralism","Functionalism","Gestalt","Behaviorism"],a:1,e:"Functionalism asked why the mind does things, influenced by Darwin."},
+{u:1,s:X,q:"Freud's psychoanalytic approach emphasizes ______.",o:["only observable behavior","unconscious drives and childhood experiences","self-actualization","how we process information"],a:1,e:"Freud focused on the unconscious, which shows up in dreams and slips of the tongue."},
+{u:1,s:X,q:"Abraham Maslow and Carl Rogers are associated with which approach?",o:["Humanistic","Cognitive","Behaviorism","Psychodynamic"],a:0,e:"Humanistic psychology emphasizes free will, growth, and self-actualization."},
+{u:1,s:X,q:"What are the four goals of psychology?",o:["Describe, explain, predict, and control behavior","Observe, record, publish, and teach","Diagnose, treat, cure, and prevent","Define, measure, test, and repeat"],a:0,e:"Describe, explain, predict, control."},
+{u:1,s:X,q:"A psychologist who helps decide child custody and whether someone is competent to stand trial is a ______ psychologist.",o:["clinical","forensic","counselling","social"],a:1,e:"Forensic psychologists apply psychology to the legal system."},
+{u:2,s:X,q:"Studying one person, like Phineas Gage, in depth over a long period is a ______.",o:["survey","case study","experiment","correlational study"],a:1,e:"A case study is useful for rare cases but hard to generalize."},
+{u:2,s:X,q:"The less time students spend on social media, the better their grades. This is a ______ correlation.",o:["positive","negative","zero","causal"],a:1,e:"One goes down while the other goes up, so it's negative. Correlation does not prove cause."},
+{u:2,s:X,q:"Which research method is the only one that can show cause and effect?",o:["Case study","Survey","Correlational research","Experiment"],a:3,e:"Only an experiment manipulates a variable under controlled conditions."},
+{u:2,s:X,q:"In a double-blind study, ______.",o:["only the participants don't know who gets the treatment","neither the participants nor the researchers know who gets the treatment","participants are tested twice","two researchers check the results"],a:1,e:"Double-blind controls for experimenter bias. Single-blind controls for the placebo effect."},
+{u:2,s:X,q:"Thinking 'I knew it all along' after learning how something turned out is ______.",o:["confirmation bias","hindsight bias","overconfidence","emotional reasoning"],a:1,e:"Confirmation bias is seeking information that matches what you already believe."},
+{u:3,s:X,q:"Low levels of which neurotransmitter are linked to Alzheimer's disease?",o:["Dopamine","Serotonin","Acetylcholine","Endorphins"],a:2,e:"Trick: A for Alzheimer's, A for Acetylcholine."},
+{u:3,s:X,q:"Which brain structure forms new long-term memories?",o:["Amygdala","Hippocampus","Thalamus","Pons"],a:1,e:"Trick: a hippo never forgets."},
+{u:3,s:X,q:"Identical twins share ______ of their genes; fraternal twins share about ______.",o:["100%; 50%","50%; 25%","100%; 25%","75%; 50%"],a:0,e:"Fraternal twins are genetically like any other brother or sister."},
+{u:3,s:X,q:"A happy, smiling baby gets more attention from adults than a fussy one. This is a(n) ______ gene-environment correlation.",o:["passive","evocative","active","recessive"],a:1,e:"Evocative: the child's traits evoke reactions from others."},
+{u:4,s:X,q:"Circadian rhythms are controlled by the suprachiasmatic nucleus (SCN), found in the ______.",o:["hippocampus","hypothalamus","cerebellum","medulla"],a:1,e:"The SCN in the hypothalamus is your biological clock."},
+{u:4,s:X,q:"REM sleep is called paradoxical sleep because ______.",o:["the body is very active","the brain looks almost awake but the person is hard to wake","it happens only in children","no dreams occur"],a:1,e:"REM is about 20% of sleep and is when the most vivid dreams happen."},
+{u:4,s:X,q:"Sleep spindles appear in which stage of sleep?",o:["Stage 1","Stage 2","Stage 4","REM"],a:1,e:"Stage 2 is light sleep, about 55% of all sleep."},
+{u:4,s:X,q:"The deepest stage of sleep, with strong delta waves, is ______.",o:["Stage 1","Stage 2","Stage 4","REM"],a:2,e:"Stage 4 is the hardest to wake from."},
+{u:4,s:X,q:"A person who suddenly and irresistibly falls asleep during the day has ______.",o:["insomnia","sleep apnea","narcolepsy","night terrors"],a:2,e:"Narcolepsy can be dangerous while driving."},
+{u:4,s:X,q:"Breathing that stops again and again during sleep is called ______.",o:["sleep apnea","narcolepsy","insomnia","sleepwalking"],a:0,e:"Snoring can be a sign of sleep apnea."},
+{u:4,s:X,q:"Freud said the hidden meaning of a dream is its ______ content.",o:["manifest","latent","symbolic","residual"],a:1,e:"Manifest = what happens in the dream. Latent = the hidden meaning."},
+{u:4,s:X,q:"Needing more and more of a drug to get the same effect is called ______.",o:["withdrawal","tolerance","abuse","dependence"],a:1,e:"Withdrawal is the set of symptoms when you suddenly stop."},
+{u:4,s:X,q:"Alcohol is classified as a ______.",o:["stimulant","depressant","hallucinogen","opiate"],a:1,e:"Depressants ('downers') slow the central nervous system."},
+{u:4,s:X,q:"Cocaine, amphetamines, nicotine, and caffeine are all ______.",o:["depressants","stimulants","hallucinogens","opiates"],a:1,e:"Stimulants ('uppers') speed up the nervous system."},
+{u:4,s:X,q:"A drug that increases activity at a synapse is called a(n) ______.",o:["agonist","antagonist","depressant","placebo"],a:0,e:"Antagonists decrease activity at the synapse."},
+{u:5,s:X,q:"Using an old schema to understand something new, like calling a zebra a horse, is ______.",o:["accommodation","assimilation","conservation","centration"],a:1,e:"Accommodation is changing the schema to fit the new thing."},
+{u:5,s:X,q:"A child who says the sun is alive and happy is showing ______.",o:["artificialism","animism","conservation","object permanence"],a:1,e:"Animism = believing objects are alive. Artificialism = believing people made nature."},
+{u:5,s:X,q:"A teenager who believes 'it can't happen to me' is showing the ______.",o:["imaginary audience","personal fable","identity crisis","egocentric illusion"],a:1,e:"Imaginary audience is believing everyone is watching you."},
+{u:5,s:X,q:"According to Erikson, the main challenge of adolescence is ______.",o:["intimacy vs. isolation","identity vs. role confusion","industry vs. inferiority","generativity vs. stagnation"],a:1,e:"Ages 13 to 19: Who am I?"},
+{u:6,s:X,q:"Jennifer doesn't have to do chores for a month because she got an A. This is ______.",o:["positive reinforcement","negative reinforcement","positive punishment","negative punishment"],a:1,e:"Something unpleasant (chores) is taken away to encourage the behavior."},
+{u:6,s:X,q:"A slot machine pays out after an unpredictable number of plays. This is a ______ schedule.",o:["fixed-ratio","variable-ratio","fixed-interval","variable-interval"],a:1,e:"Ratio = number of responses. Variable = unpredictable."},
+{u:6,s:X,q:"Getting paid every month is an example of a ______ schedule.",o:["fixed-interval","variable-interval","fixed-ratio","variable-ratio"],a:0,e:"Interval = time. Fixed = predictable."},
+{u:6,s:X,q:"After extinction, a conditioned response suddenly comes back. This is called ______.",o:["generalization","spontaneous recovery","discrimination","acquisition"],a:1,e:"Spontaneous recovery happens after time passes."},
+{u:6,s:X,q:"Tolman's rats learned a maze without rewards but only showed it once rewards were given. This is ______.",o:["insight learning","latent learning","shaping","higher-order conditioning"],a:1,e:"Latent learning is hidden until there's a reason to show it."},
+{u:6,s:X,q:"Taking away a child's devices for a week because of a tantrum is ______.",o:["positive punishment","negative punishment","negative reinforcement","extinction"],a:1,e:"Something good is taken away to decrease the behavior."},
+{u:7,s:X,q:"Short-term memory can hold about ______ items.",o:["3","7 plus or minus 2","20","unlimited"],a:1,e:"The 'magic number.' Chunking helps you hold more."},
+{u:7,s:X,q:"Learning your new address makes it hard to remember your old one. This is ______.",o:["proactive interference","retroactive interference","decay","motivated forgetting"],a:1,e:"Retroactive = new blocks old. Proactive = old blocks new."},
+{u:7,s:X,q:"Remembering how to ride a bike is an example of ______ memory.",o:["episodic","semantic","procedural","sensory"],a:2,e:"Procedural memory is for skills and habits."},
+{u:7,s:X,q:"After a head injury, a person can't form new memories. This is ______ amnesia.",o:["retrograde","anterograde","infantile","motivated"],a:1,e:"Anterograde = can't form new memories. Retrograde = can't recall the past."},
+{u:7,s:X,q:"A multiple-choice test measures memory by ______.",o:["recall","recognition","relearning","rehearsal"],a:1,e:"Recognition = picking from options. Recall = producing the answer yourself."},
+{u:8,s:X,q:"Doing something for its own enjoyment, not for a reward, is ______ motivation.",o:["extrinsic","intrinsic","secondary","incentive"],a:1,e:"Extrinsic motivation is for external rewards like money."},
+{u:8,s:X,q:"Drive-reduction theory says we act to reduce drives and restore ______.",o:["arousal","homeostasis","self-actualization","incentives"],a:1,e:"Homeostasis is the body's state of balance."},
+{u:8,s:X,q:"Choosing between washing the dishes and raking the yard, when you dislike both, is a(n) ______ conflict.",o:["approach-approach","avoidance-avoidance","approach-avoidance","double-approach"],a:1,e:"Two bad options, so you pick the lesser evil."},
+{u:8,s:X,q:"Wanting to attend college in Kingston but not wanting to leave your family is a(n) ______ conflict.",o:["approach-approach","avoidance-avoidance","approach-avoidance","drive"],a:2,e:"One goal with both a good side and a bad side."},
+{u:8,s:X,q:"In Maslow's hierarchy of needs, the highest need is ______.",o:["safety","esteem","belonging","self-actualization"],a:3,e:"Higher needs only appear after basic ones are met."},
+{u:8,s:X,q:"Which part of the brain controls hunger?",o:["Hippocampus","Hypothalamus","Amygdala","Cerebellum"],a:1,e:"The hypothalamus controls hunger, thirst, sex, and temperature."},
+{u:8,s:X,q:"The theory that we feel an emotion because of our body's reaction ('I'm shaking, so I'm afraid') is the ______ theory.",o:["Cannon-Bard","James-Lange","Schachter-Singer","drive-reduction"],a:1,e:"James-Lange: body first, then emotion."},
+{u:8,s:X,q:"The theory that the emotion and the body's reaction happen at the same time is the ______ theory.",o:["Cannon-Bard","James-Lange","Schachter-Singer","arousal"],a:0,e:"Cannon-Bard: both happen at once."},
+{u:8,s:X,q:"The theory that we notice arousal, then look at our surroundings to label the emotion, is the ______ theory.",o:["James-Lange","Cannon-Bard","Schachter-Singer","facial-feedback"],a:2,e:"Schachter-Singer (two-factor): arousal plus a cognitive label."},
+{u:8,s:X,q:"Which of these is NOT one of the six primary emotions?",o:["Happiness","Fear","Jealousy","Disgust"],a:2,e:"The six are happiness, surprise, sadness, fear, disgust, and anger."}
+];
+Q.forEach((q,i)=>q.id=i);
+const L="ABCD";
+const $=id=>document.getElementById(id);
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function pool(){const u=$("unit").value,pq=$("pqOnly").checked;return Q.filter(q=>(u==="all"||String(q.u)===u)&&(!pq||q.s===P))}
+
+$("unit").innerHTML='<option value="all">All units</option>'+Object.entries(UNITS).map(([k,v])=>`<option value="${k}">${v}</option>`).join("");
+try{const su=store.get("p101-unit");if(su&&[...$("unit").options].some(o=>o.value===su))$("unit").value=su}catch(e){}
+
+/* ---------- study ---------- */
+let sList=[],si=0,shown=false;
+function sBuild(){sList=pool();si=0;shown=false;sRender()}
+function sRender(){
+  if(!sList.length){$("sUnit").textContent="No questions here yet";$("sQ").textContent="Untick 'Practice quiz only' to see the extra questions for this unit.";$("sOpts").innerHTML="";$("sTags").innerHTML="";$("sExp").hidden=true;$("sCount").textContent="0 / 0";return}
+  const q=sList[si];
+  $("sUnit").textContent=UNITS[q.u];
+  $("sTags").innerHTML=q.s===P?'<span class="tag">From practice quiz</span>':'<span class="tag extra">Extra · likely on test</span>';
+  $("sQ").textContent=q.q;
+  $("sOpts").innerHTML=q.o.map((o,i)=>`<li><button class="opt${shown&&i===q.a?" right":""}" disabled><b>${L[i]}</b><span></span></button></li>`).join("");
+  [...$("sOpts").querySelectorAll("span")].forEach((s,i)=>s.textContent=q.o[i]);
+  $("sExp").hidden=!shown;$("sExp").textContent=shown?("Answer: "+L[q.a]+". "+q.o[q.a]+" — "+q.e):"";
+  $("sReveal").textContent=shown?"Hide answer":"Show answer";
+  $("sCount").textContent=(si+1)+" / "+sList.length;
+}
+$("sReveal").onclick=()=>{shown=!shown;sRender()};
+$("sNext").onclick=()=>{if(!sList.length)return;si=(si+1)%sList.length;shown=false;sRender()};
+$("sPrev").onclick=()=>{if(!sList.length)return;si=(si-1+sList.length)%sList.length;shown=false;sRender()};
+$("sShuf").onclick=()=>{sList=shuffle(sList);si=0;shown=false;sRender()};
+
+/* ---------- test ---------- */
+let size=10,test=[],ti=0,answers=[],lastMissed=[];
+$("sizes").onclick=e=>{const b=e.target.closest("button");if(!b)return;size=+b.dataset.n;[...$("sizes").children].forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"));setupInfo()};
+function setupInfo(){const n=pool().length;$("pool").textContent=n+" questions available with this filter."+(size&&size>n?" The test will use all "+n+".":"");
+  const b=store.get("p101-best");$("best").textContent=b?"Your best so far: "+b+"%":"";$("start").disabled=!n}
+function startTest(list){
+  test=list.map(q=>({q,ord:shuffle([0,1,2,3])}));ti=0;answers=new Array(test.length).fill(null);
+  show("run");tRender();
+}
+$("start").onclick=()=>{const p=shuffle(pool());startTest(size?p.slice(0,size):p)};
+function tRender(){
+  const t=test[ti],q=t.q;
+  $("tCount").textContent="Question "+(ti+1)+" of "+test.length;
+  $("tBar").style.width=((ti)/test.length*100)+"%";
+  $("tUnit").textContent=UNITS[q.u];
+  $("tQ").textContent=q.q;
+  $("tOpts").innerHTML=t.ord.map((oi,k)=>`<li><button class="opt${answers[ti]===oi?" sel":""}" data-oi="${oi}"><b>${L[k]}</b><span></span></button></li>`).join("");
+  [...$("tOpts").querySelectorAll("span")].forEach((s,k)=>s.textContent=q.o[t.ord[k]]);
+  $("tBack").disabled=ti===0;$("tBack").style.visibility=ti===0?"hidden":"visible";
+  $("tNext").textContent=ti===test.length-1?"Finish and grade":"Next";
+  $("tWarn").hidden=true;
+}
+$("tOpts").onclick=e=>{const b=e.target.closest(".opt");if(!b)return;answers[ti]=+b.dataset.oi;[...$("tOpts").querySelectorAll(".opt")].forEach(x=>x.classList.toggle("sel",x===b));$("tWarn").hidden=true};
+$("tBack").onclick=()=>{if(ti>0){ti--;tRender()}};
+let finishArmed=false;
+$("tNext").onclick=()=>{
+  if(answers[ti]===null&&ti<test.length-1){$("tWarn").textContent="Pick an answer first, or tap Next again to skip it.";if(!$("tWarn").hidden){ti++;tRender();return}$("tWarn").hidden=false;return}
+  if(ti<test.length-1){ti++;tRender();return}
+  const blank=answers.filter(a=>a===null).length;
+  if(blank&&!finishArmed){finishArmed=true;$("tWarn").textContent="You left "+blank+" unanswered. Tap Finish again to grade anyway, or go Back.";$("tWarn").hidden=false;return}
+  finishArmed=false;grade();
+};
+$("tQuit").onclick=()=>{show("setup");setupInfo()};
+function grade(){
+  let right=0;const per={};lastMissed=[];
+  test.forEach((t,i)=>{const ok=answers[i]===t.q.a;if(ok)right++;per[t.q.u]=per[t.q.u]||[0,0];per[t.q.u][1]++;if(ok)per[t.q.u][0]++;else lastMissed.push({q:t.q,a:answers[i]})});
+  const pct=Math.round(right/test.length*100);
+  const best=+(store.get("p101-best")||0);if(pct>best)store.set("p101-best",String(pct));
+  $("rPct").textContent=pct+"%";
+  $("rLine").textContent=right+" of "+test.length+" correct. "+(pct>=80?"Strong. Review the misses below and you're set.":pct>=60?"Passing. Go over the misses, then retake them.":"Keep going. Read each explanation below, then retake the missed ones.");
+  $("rUnits").innerHTML='<p class="label">By unit</p>'+Object.keys(per).sort().map(u=>{const [r,n]=per[u];const p=Math.round(r/n*100);return `<div class="ub"><span>${UNITS[u]}</span><span class="count">${r}/${n}</span><div class="bar"><i style="width:${p}%"></i></div></div>`}).join("");
+  $("rRetry").hidden=!lastMissed.length;
+  const m=$("rMiss");m.innerHTML=lastMissed.length?'<p class="label">Review what you missed</p>':'<p class="label">No misses. Nice work.</p>';
+  lastMissed.forEach(x=>{const d=document.createElement("div");d.className="miss";
+    const u=document.createElement("p");u.className="count";u.textContent=UNITS[x.q.u];
+    const q=document.createElement("p");q.style.fontWeight="700";q.textContent=x.q.q;
+    const y=document.createElement("p");y.className="yours";y.textContent="Your answer: "+(x.a===null?"(skipped)":x.q.o[x.a]);
+    const c=document.createElement("p");c.className="correct";c.textContent="Correct: "+x.q.o[x.q.a];
+    const e=document.createElement("p");e.className="explain";e.textContent=x.q.e;
+    d.append(u,q,y,c,e);m.append(d)});
+  $("tBar").style.width="100%";
+  show("results");window.scrollTo({top:0,behavior:"smooth"});
+}
+$("rRetry").onclick=()=>startTest(shuffle(lastMissed.map(x=>x.q)));
+$("rNew").onclick=()=>{show("setup");setupInfo()};
+
+/* ---------- modes ---------- */
+function show(id){["study","setup","run","results"].forEach(s=>$(s).hidden=s!==id)}
+function setMode(m){$("mStudy").setAttribute("aria-pressed",m==="study");$("mTest").setAttribute("aria-pressed",m==="test");if(m==="study"){show("study");sBuild()}else{show("setup");setupInfo()}store.set("p101-mode",m)}
+$("mStudy").onclick=()=>setMode("study");
+$("mTest").onclick=()=>setMode("test");
+function filterChanged(){store.set("p101-unit",$("unit").value);if(!$("study").hidden)sBuild();else if(!$("run").hidden||!$("results").hidden){}else setupInfo();if(!$("setup").hidden)setupInfo()}
+$("unit").onchange=filterChanged;$("pqOnly").onchange=filterChanged;
+setMode(store.get("p101-mode")==="test"?"test":"study");
+</script>
